@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // =========================================================
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
-        '.hero-text, .hero-image, .crew-card, .counter-item, .crew-wano, ' +
-        '.sword-card, .enemy-card, .award-item, .ship-card, .theory-card, ' +
-        '.meme-card, .crew-relation-card, .bio-text, .bio-image, .win-item'
+        '.hero-text, .hero-image, .counter-item, ' +
+        '.sword-card, .enemy-card, .crew-relation-card, .award-item, ' +
+        '.ship-card, .theory-card, .meme-card, .bio-text, .bio-image, .win-item'
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // 6. АНИМАЦИЯ 3D-НАКЛОНА КАРТОЧЕК
 // =========================================================
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.crew-card, .sword-card, .enemy-card, .ship-card');
+    const cards = document.querySelectorAll('.crew-card, .sword-card, .enemy-card, .crew-relation-card, .ship-card');
 
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -214,6 +214,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(timer);
             }
         }, 25);
+    }
+});
+
+// =========================================================
+// 8. КОНВЕЙЕРЫ (ВРАГИ И КОМАНДА)
+// =========================================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Для врагов
+    const enemiesTrack = document.querySelector('.enemies-track');
+    if (enemiesTrack) {
+        // Увеличиваем скорость при наведении
+        enemiesTrack.addEventListener('mouseenter', () => {
+            enemiesTrack.style.animationDuration = '15s';
+        });
+        enemiesTrack.addEventListener('mouseleave', () => {
+            enemiesTrack.style.animationDuration = '30s';
+        });
+    }
+
+    // Для команды
+    const crewTrack = document.querySelector('.crew-relations-track');
+    if (crewTrack) {
+        crewTrack.addEventListener('mouseenter', () => {
+            crewTrack.style.animationDuration = '17s';
+        });
+        crewTrack.addEventListener('mouseleave', () => {
+            crewTrack.style.animationDuration = '35s';
+        });
     }
 });
 
