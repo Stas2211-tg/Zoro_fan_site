@@ -10,31 +10,108 @@
 :root {
     --green: #1a8a3a;
     --green-dark: #0d2b0d;
+    --green-glow: rgba(26, 138, 58, 0.4);
     --purple: #7b2fbe;
+    --purple-glow: rgba(123, 47, 190, 0.4);
     --gold: #c9a84c;
+    --gold-glow: rgba(201, 168, 76, 0.3);
     --bg: #0a0f0a;
     --text: #e8f0e8;
     --card-bg: #111811;
     --border: #1a3a1a;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.7;
+    line-height: 1.8;
     overflow-x: hidden;
+    position: relative;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 .green { color: var(--green); }
 .gold { color: var(--gold); }
 .purple { color: var(--purple); }
+
+/* ========================================================= */
+/* АНИМАЦИЯ: ЛЕТАЮЩИЕ ЛИСТЬЯ САКУРЫ                           */
+/* ========================================================= */
+.sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.sakura-leaf {
+    position: absolute;
+    top: -10%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 30% 30%, #ffb7c5, #ff6b8a);
+    border-radius: 50% 0 50% 0;
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg) scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.9;
+        transform: translateY(50vh) rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* ========================================================= */
+/* АНИМАЦИЯ: ЭФФЕКТ РАЗРЕЗА                                   */
+/* ========================================================= */
+.slash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    background: linear-gradient(135deg, transparent 40%, rgba(26, 138, 58, 0.3) 50%, rgba(123, 47, 190, 0.2) 60%, transparent 70%);
+    background-size: 300% 300%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.slash-overlay.active {
+    opacity: 1;
+    animation: slashEffect 1s ease-out forwards;
+}
+
+@keyframes slashEffect {
+    0% { background-position: -200% 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { background-position: 200% 0%; opacity: 0; }
+}
 
 /* ========================================================= */
 /* ШАПКА (ХЕДЕР)                                              */
@@ -47,7 +124,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 30px rgba(26, 138, 58, 0.15);
+    box-shadow: 0 4px 30px var(--green-glow);
 }
 
 .header-inner {
@@ -65,12 +142,24 @@ body {
     font-family: 'Russo One', sans-serif;
     font-size: 28px;
     letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 30px var(--green-glow);
 }
 
 .logo-skull {
     height: 50px;
     width: auto;
-    filter: drop-shadow(0 0 10px var(--green));
+    filter: drop-shadow(0 0 15px var(--green-glow));
+    transition: 0.3s;
+}
+
+.logo:hover .logo-skull {
+    filter: drop-shadow(0 0 30px var(--green-glow)) drop-shadow(0 0 60px var(--purple-glow));
 }
 
 .nav {
@@ -89,12 +178,27 @@ body {
     transition: 0.3s;
     padding: 5px 0;
     border-bottom: 2px solid transparent;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--green);
+    transition: 0.3s;
 }
 
 .nav a:hover {
     color: var(--green);
-    border-bottom-color: var(--green);
-    text-shadow: 0 0 12px rgba(26, 138, 58, 0.3);
+    text-shadow: 0 0 20px var(--green-glow);
+}
+
+.nav a:hover::after {
+    width: 100%;
 }
 
 /* ========================================================= */
@@ -108,6 +212,22 @@ body {
     min-height: 90vh;
     display: flex;
     align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(26, 138, 58, 0.05) 0%, transparent 70%);
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
 }
 
 .hero-content {
@@ -129,30 +249,48 @@ body {
     letter-spacing: 6px;
     text-transform: uppercase;
     margin-bottom: 10px;
+    animation: glowText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+    0%, 100% { text-shadow: 0 0 10px var(--gold-glow); }
+    50% { text-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(201, 168, 76, 0.2); }
 }
 
 .hero h1 {
     font-family: 'Russo One', sans-serif;
-    font-size: 64px;
+    font-size: 72px;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 8px;
     line-height: 1.1;
     margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero h1 .gold {
+    animation: glowText 2s ease-in-out infinite;
 }
 
 .hero-quote {
-    font-size: 22px;
+    font-size: 24px;
     font-style: italic;
     border-left: 4px solid var(--gold);
     padding-left: 25px;
     margin: 25px 0 35px;
     color: #d0d8d0;
+    animation: fadeInUp 1.4s ease;
+    min-height: 80px;
+}
+
+.hero-quote .gold {
+    color: var(--gold);
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    animation: fadeInUp 1.6s ease;
 }
 
 .btn {
@@ -166,20 +304,37 @@ body {
     transition: 0.4s;
     display: inline-block;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-primary {
     background: var(--green);
     color: #fff;
-    box-shadow: 0 0 20px rgba(26, 138, 58, 0.3);
+    box-shadow: 0 0 30px var(--green-glow);
 }
 
 .btn-primary:hover {
     background: transparent;
     border-color: var(--green);
     color: var(--green);
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(26, 138, 58, 0.5);
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 0 50px var(--green-glow);
 }
 
 .btn-secondary {
@@ -191,8 +346,8 @@ body {
 .btn-secondary:hover {
     background: var(--purple);
     color: #fff;
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(123, 47, 190, 0.4);
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 0 50px var(--purple-glow);
 }
 
 .hero-image {
@@ -205,29 +360,13 @@ body {
     max-width: 100%;
     height: auto;
     max-height: 600px;
-    filter: drop-shadow(0 0 40px rgba(26, 138, 58, 0.3)) drop-shadow(0 0 80px rgba(123, 47, 190, 0.15));
-    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 40px var(--green-glow)) drop-shadow(0 0 80px var(--purple-glow));
+    animation: floatHero 4s ease-in-out infinite;
 }
 
-/* ========================================================= */
-/* ЭФФЕКТ РАЗРЕЗА (АНИМАЦИЯ)                                 */
-/* ========================================================= */
-.slash-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent 40%, rgba(26, 138, 58, 0.05) 50%, transparent 60%);
-    background-size: 200% 200%;
-    animation: slash 6s linear infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes slash {
-    0% { background-position: -200% 0%; }
-    100% { background-position: 200% 0%; }
+@keyframes floatHero {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.02); }
 }
 
 /* ========================================================= */
@@ -247,18 +386,39 @@ body {
     text-align: center;
 }
 
+.counter-item {
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(26, 138, 58, 0.05);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.counter-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(201, 168, 76, 0.1);
+}
+
 .counter-number {
     font-family: 'Russo One', sans-serif;
-    font-size: 48px;
+    font-size: 52px;
     color: var(--gold);
     line-height: 1.2;
+    animation: counterPulse 2s ease-in-out infinite;
+}
+
+@keyframes counterPulse {
+    0%, 100% { text-shadow: 0 0 10px var(--gold-glow); }
+    50% { text-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(201, 168, 76, 0.2); }
 }
 
 .counter-label {
     font-size: 16px;
     color: #8a9a8a;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    margin-top: 5px;
 }
 
 /* ========================================================= */
@@ -270,11 +430,12 @@ body {
 
 h2 {
     font-family: 'Russo One', sans-serif;
-    font-size: 40px;
+    font-size: 44px;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     margin-bottom: 15px;
     text-align: center;
+    animation: glowText 3s ease-in-out infinite;
 }
 
 .section-subtitle {
@@ -282,11 +443,12 @@ h2 {
     color: #8a9a8a;
     font-size: 18px;
     margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
 .crew-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 25px;
     margin-bottom: 50px;
 }
@@ -297,19 +459,37 @@ h2 {
     border-radius: 16px;
     padding: 20px 10px;
     text-align: center;
-    transition: 0.4s;
+    transition: 0.5s;
     cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.crew-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(26, 138, 58, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.crew-card:hover::before {
+    opacity: 1;
 }
 
 .crew-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.02);
     border-color: var(--green);
-    box-shadow: 0 8px 30px rgba(26, 138, 58, 0.15);
+    box-shadow: 0 15px 50px var(--green-glow);
 }
 
 .crew-card img {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
@@ -319,33 +499,41 @@ h2 {
 
 .crew-card:hover img {
     border-color: var(--gold);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--gold-glow);
 }
 
 .crew-card h4 {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .crew-card p {
     font-size: 12px;
     color: #8a9a8a;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .crew-wano {
     text-align: center;
     margin-top: 30px;
-    padding: 30px;
+    padding: 40px;
     background: var(--card-bg);
     border-radius: 20px;
     border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.crew-wano:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 60px rgba(201, 168, 76, 0.1);
 }
 
 .crew-wano h3 {
     font-family: 'Russo One', sans-serif;
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 25px;
 }
 
@@ -353,6 +541,12 @@ h2 {
     max-width: 100%;
     border-radius: 12px;
     border: 2px solid var(--border);
+    transition: 0.3s;
+}
+
+.crew-wano-img:hover {
+    border-color: var(--gold);
+    transform: scale(1.01);
 }
 
 /* ========================================================= */
@@ -384,6 +578,7 @@ h2 {
 .footer-skull {
     height: 40px;
     width: auto;
+    filter: drop-shadow(0 0 10px var(--green-glow));
 }
 
 .footer-links {
@@ -401,22 +596,39 @@ h2 {
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
-    transition: 0.3s;
+    transition: 0.4s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    transition: 0.5s;
+}
+
+.footer-btn:hover::before {
+    left: 100%;
 }
 
 .footer-btn:hover {
     background: var(--green);
     color: #fff;
-    box-shadow: 0 0 30px rgba(26, 138, 58, 0.3);
+    box-shadow: 0 0 40px var(--green-glow);
     transform: scale(1.05);
 }
 
 .footer-copy {
     font-size: 14px;
     color: #5a6a5a;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .footer-copy p:last-child {
@@ -426,26 +638,17 @@ h2 {
 }
 
 /* ========================================================= */
-/* АНИМАЦИИ                                                  */
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ                            */
 /* ========================================================= */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ========================================================= */
@@ -458,7 +661,8 @@ h2 {
     }
 
     .hero h1 {
-        font-size: 44px;
+        font-size: 48px;
+        letter-spacing: 4px;
     }
 
     .hero-quote {
@@ -466,7 +670,7 @@ h2 {
         padding-left: 0;
         border-top: 3px solid var(--gold);
         padding-top: 20px;
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .hero-buttons {
@@ -482,7 +686,7 @@ h2 {
     }
 
     .counter-number {
-        font-size: 36px;
+        font-size: 40px;
     }
 }
 
@@ -498,6 +702,10 @@ h2 {
         font-size: 22px;
     }
 
+    .logo-skull {
+        height: 40px;
+    }
+
     .nav {
         justify-content: center;
         gap: 5px 12px;
@@ -507,6 +715,11 @@ h2 {
         font-size: 11px;
     }
 
+    .hero {
+        padding: 40px 0 50px;
+        min-height: 70vh;
+    }
+
     .hero h1 {
         font-size: 32px;
         letter-spacing: 2px;
@@ -514,6 +727,12 @@ h2 {
 
     .hero-quote {
         font-size: 16px;
+        padding-top: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        letter-spacing: 3px;
     }
 
     .btn {
@@ -531,8 +750,24 @@ h2 {
         height: 55px;
     }
 
+    .crew-card h4 {
+        font-size: 12px;
+    }
+
+    .crew-card p {
+        font-size: 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
     .footer-btn {
         padding: 8px 20px;
         font-size: 12px;
+    }
+
+    .counter-number {
+        font-size: 32px;
     }
 }
