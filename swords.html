@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мечи Зоро — Легенда трёх мечей</title>
+    <title>Мечи Зоро — Легендарные клинки и техники</title>
+    <link rel="icon" href="zoro-skull.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .swords-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+        .sword-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; transition: 0.4s; }
+        .sword-card:hover { transform: translateY(-12px); border-color: var(--gold); box-shadow: 0 15px 50px rgba(201, 168, 76, 0.1); }
+        .sword-card img { max-width: 200px; margin-bottom: 15px; transition: 0.3s; }
+        .sword-card:hover img { transform: scale(1.05); }
+        .sword-card h3 { font-family: 'Russo One', sans-serif; font-size: 24px; color: var(--gold); }
+        .sword-card .grade { color: #8a9a8a; font-size: 14px; letter-spacing: 1px; }
+        .sword-card p { margin-top: 10px; line-height: 1.8; }
+        .tech-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 30px 0; }
+        .tech-item { background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700; transition: 0.3s; }
+        .tech-item:hover { border-color: var(--gold); transform: scale(1.05); }
+        .tech-item.purple { border-color: var(--purple); }
+        .tech-item.gold { border-color: var(--gold); }
+        @media (max-width: 768px) { .swords-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
 
@@ -30,40 +47,50 @@
 
     <section class="swords">
         <div class="container">
-            <h2>⚔️ Мечи <span class="gold">Зоро</span></h2>
-            <p class="section-subtitle">Три легендарных клинка, которые он носит с собой</p>
-            
-            <div class="swords-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0;">
-                <div class="sword-card" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; transition: 0.4s;">
-                    <img src="wado.png" alt="Вадо Ичимонидзи" class="sword-img" style="width: 100%; max-width: 200px; filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));">
-                    <h3 style="font-family: 'Russo One', sans-serif; font-size: 24px; color: var(--gold); margin: 15px 0 5px;">Вадо Ичимонидзи</h3>
-                    <p class="sword-grade" style="color: #8a9a8a; font-size: 14px; letter-spacing: 1px;">21 великий меч</p>
-                    <p style="margin-top: 10px; line-height: 1.8;">Последний дар Куины. Белый клинок с белым свечением. Символ клятвы. Зоро никогда не расстаётся с этим мечом.</p>
+            <h2 style="font-family: 'Russo One', sans-serif; font-size: 44px; text-transform: uppercase; letter-spacing: 4px; text-align: center; color: var(--gold);">⚔️ Мечи и техники Зоро</h2>
+            <p style="text-align: center; color: #8a9a8a; font-size: 18px; margin-bottom: 40px;">Три легендарных клинка и боевые техники, которыми он сокрушает врагов</p>
+
+            <div class="swords-grid">
+                <!-- ВАДО -->
+                <div class="sword-card">
+                    <img src="wado.png" alt="Вадо Ичимонидзи" style="filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));">
+                    <h3>Вадо Ичимонидзи</h3>
+                    <p class="grade">21 великий меч</p>
+                    <p>Последний дар Куины. Белый клинок с белым свечением. Символ клятвы. Зоро никогда не расстаётся с этим мечом. Он носит его как напоминание о своей цели.</p>
                 </div>
-                
-                <div class="sword-card" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; transition: 0.4s;">
-                    <img src="sandai.png" alt="Сандай Китэцу" class="sword-img" style="width: 100%; max-width: 200px; filter: drop-shadow(0 0 30px rgba(123, 47, 190, 0.4));">
-                    <h3 style="font-family: 'Russo One', sans-serif; font-size: 24px; color: var(--purple); margin: 15px 0 5px;">Сандай Китэцу</h3>
-                    <p class="sword-grade" style="color: #8a9a8a; font-size: 14px; letter-spacing: 1px;">Проклятый меч</p>
-                    <p style="margin-top: 10px; line-height: 1.8;">Фиолетовый клинок с аурой проклятия. Приносит смерть владельцу, но Зоро подчинил его своей волей.</p>
+
+                <!-- САНДАЙ -->
+                <div class="sword-card">
+                    <img src="sandai.png" alt="Сандай Китэцу" style="filter: drop-shadow(0 0 30px rgba(123, 47, 190, 0.4));">
+                    <h3>Сандай Китэцу</h3>
+                    <p class="grade">Проклятый меч</p>
+                    <p>Фиолетовый клинок с аурой проклятия. Приносит смерть владельцу, но Зоро подчинил его своей волей. Его фиолетовое свечение — символ силы и контроля.</p>
                 </div>
-                
-                <div class="sword-card" style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 30px 20px; text-align: center; transition: 0.4s;">
-                    <img src="enma.png" alt="Энма" class="sword-img" style="width: 100%; max-width: 200px; filter: drop-shadow(0 0 30px rgba(26, 138, 58, 0.4));">
-                    <h3 style="font-family: 'Russo One', sans-serif; font-size: 24px; color: var(--green); margin: 15px 0 5px;">Энма</h3>
-                    <p class="sword-grade" style="color: #8a9a8a; font-size: 14px; letter-spacing: 1px;">Легендарный клинок Одена</p>
-                    <p style="margin-top: 10px; line-height: 1.8;">Зелёное свечение, высасывает Хаки. Способен разрубить небо. Получен в Вано.</p>
+
+                <!-- ЭНМА -->
+                <div class="sword-card">
+                    <img src="enma.png" alt="Энма" style="filter: drop-shadow(0 0 30px rgba(26, 138, 58, 0.4));">
+                    <h3>Энма</h3>
+                    <p class="grade">Легендарный клинок Одена</p>
+                    <p>Зелёное свечение, высасывает Хаки. Способен разрубить небо. Получен в Вано. Это самый мощный меч Зоро, который требует полного контроля над Хаки.</p>
                 </div>
             </div>
 
-            <h3 style="margin-top: 50px; text-align: center; font-family: 'Russo One', sans-serif; font-size: 32px;">⚡ Техники <span class="green">Зоро</span></h3>
-            <div class="tech-grid" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 30px 0;">
-                <div class="tech-item" style="background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700;">Они Гори — Демонический удар</div>
-                <div class="tech-item" style="background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700;">Тацумаки — Драконий вихрь</div>
-                <div class="tech-item" style="background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700;">Санзен Секкай — Три тысячи миров</div>
-                <div class="tech-item" style="background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700; border-color: var(--purple);">Асура — 9 мечей (демоническая форма)</div>
-                <div class="tech-item" style="background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700; border-color: var(--gold);">Король Ада — финальная техника</div>
-                <div class="tech-item" style="background: var(--card-bg); padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); font-weight: 700;">Року-Хо — испускание Хаки</div>
+            <!-- АСУРА -->
+            <div style="text-align: center; margin: 40px 0; padding: 30px; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border);">
+                <h3 style="font-family: 'Russo One', sans-serif; font-size: 32px; color: var(--purple);">👹 Асура — 9 мечей</h3>
+                <img src="asura.jpg" alt="Асура Зоро" style="max-width: 60%; border-radius: 16px; border: 2px solid var(--border); margin: 20px 0;">
+                <p style="max-width: 700px; margin: 0 auto; line-height: 1.9;">Асура — демоническая форма Зоро, в которой он создаёт 9 рук и 9 голов. Это не дьявольский плод, а проявление его духа и воли. Впервые использовал против Каку в Эниес Лобби, а в Вано усилил до «Короля Ада».</p>
+            </div>
+
+            <h3 style="font-family: 'Russo One', sans-serif; font-size: 32px; text-align: center; color: var(--gold); margin-top: 40px;">⚡ Техники Зоро</h3>
+            <div class="tech-grid">
+                <div class="tech-item">Они Гори — Демонический удар</div>
+                <div class="tech-item">Тацумаки — Драконий вихрь</div>
+                <div class="tech-item">Санзен Секкай — Три тысячи миров</div>
+                <div class="tech-item purple">Асура — 9 мечей</div>
+                <div class="tech-item gold">Король Ада — финальная техника</div>
+                <div class="tech-item">Року-Хо — испускание Хаки</div>
             </div>
         </div>
     </section>
