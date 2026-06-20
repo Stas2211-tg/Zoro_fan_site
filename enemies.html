@@ -3,72 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Противники Зоро — Все враги</title>
+    <title>Все противники Зоро — Враги</title>
+    <link rel="icon" href="zoro-skull.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .enemies-container {
-            overflow: hidden;
-            position: relative;
-            padding: 20px 0;
-        }
-        .enemies-track {
-            display: flex;
-            gap: 30px;
-            animation: scrollEnemies 30s linear infinite;
-            width: max-content;
-        }
-        .enemies-track:hover {
-            animation-play-state: paused;
-        }
-        @keyframes scrollEnemies {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .enemy-card {
-            flex: 0 0 280px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px 20px;
-            text-align: center;
-            transition: 0.4s;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .enemy-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            border-color: var(--purple);
-            box-shadow: 0 20px 60px rgba(123, 47, 190, 0.2);
-        }
-        .enemy-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: contain;
-            border: 3px solid var(--border);
-            margin-bottom: 15px;
-            background: var(--bg);
-            padding: 10px;
-        }
-        .enemy-card h4 {
-            font-family: 'Russo One', sans-serif;
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-        .enemy-card .result {
-            font-weight: 700;
-            font-size: 16px;
-            padding: 5px 20px;
-            border-radius: 20px;
-            margin: 10px 0;
-        }
+        .enemies-container { overflow: hidden; position: relative; padding: 20px 0; }
+        .enemies-track { display: flex; gap: 30px; animation: scrollEnemies 30s linear infinite; width: max-content; }
+        @keyframes scrollEnemies { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .enemy-card { flex: 0 0 280px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 25px 20px; text-align: center; transition: 0.4s; min-height: 420px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .enemy-card:hover { transform: scale(1.05) translateY(-10px); border-color: var(--purple); box-shadow: 0 20px 60px rgba(123, 47, 190, 0.2); }
+        .enemy-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: contain; border: 3px solid var(--border); margin-bottom: 15px; background: var(--bg); padding: 10px; }
+        .enemy-card h4 { font-family: 'Russo One', sans-serif; font-size: 20px; margin-bottom: 5px; }
+        .enemy-card .result { font-weight: 700; font-size: 16px; padding: 5px 20px; border-radius: 20px; margin: 10px 0; }
         .result.win { color: var(--green); border: 2px solid var(--green); }
         .result.lose { color: #c0392b; border: 2px solid #c0392b; }
         .result.draw { color: var(--gold); border: 2px solid var(--gold); }
+        .enemy-card .info { font-size: 14px; color: #8a9a8a; line-height: 1.6; margin-top: 8px; }
+        .enemy-card .place { font-size: 13px; color: #5a6a5a; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -94,31 +46,33 @@
 
     <section class="enemies">
         <div class="container">
-            <h2>⚔️ Все противники <span class="gold">Зоро</span></h2>
-            <p class="section-subtitle">От первых врагов до легендарных императоров</p>
+            <h2 style="font-family: 'Russo One', sans-serif; font-size: 44px; text-transform: uppercase; letter-spacing: 4px; text-align: center; color: var(--gold);">⚔️ Все противники Зоро</h2>
+            <p class="section-subtitle" style="text-align: center; color: #8a9a8a; font-size: 18px; margin-bottom: 40px;">От первых врагов до легендарных императоров — полный список побед и поражений</p>
 
             <div class="enemies-container">
                 <div class="enemies-track">
-                    <!-- Первый набор -->
-                    <div class="enemy-card"><img src="mihawk.png" alt="Михоук"><h4>Дракул Михоук</h4><p>Величайший фехтовальщик</p><p class="result lose">Поражение</p><p style="font-size: 14px; color: #8a9a8a;">Баратье</p></div>
-                    <div class="enemy-card"><img src="kaido.png" alt="Кайдо"><h4>Кайдо</h4><p>Император</p><p class="result draw">Ранил</p><p style="font-size: 14px; color: #8a9a8a;">Вано</p></div>
-                    <div class="enemy-card"><img src="king-enemy.png" alt="Кинг"><h4>Кинг</h4><p>Правая рука Кайдо</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Вано</p></div>
-                    <div class="enemy-card"><img src="mr1.png" alt="Мистер 1"><h4>Мистер 1</h4><p>Агент Барок Воркс</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Алабаста</p></div>
-                    <div class="enemy-card"><img src="kaku.png" alt="Каку"><h4>Каку</h4><p>CP9, жираф</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Эниес Лобби</p></div>
-                    <div class="enemy-card"><img src="ryuma.png" alt="Рюма"><h4>Рюма</h4><p>Легендарный самурай</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Триллер Барк</p></div>
-                    <div class="enemy-card"><img src="mone.png" alt="Моне"><h4>Моне</h4><p>Подчинённая Цезаря</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Панк Хазард</p></div>
-                    <div class="enemy-card"><img src="hachi.png" alt="Хачи"><h4>Хачи</h4><p>Рыбо-человек</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Арлонг-парк</p></div>
-                    <div class="enemy-card"><img src="morgan.png" alt="Морган"><h4>Капитан Морган</h4><p>Морской пехотинец</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Шеллс-Таун</p></div>
-                    <!-- Дублируем для бесконечного конвейера -->
-                    <div class="enemy-card"><img src="mihawk.png" alt="Михоук"><h4>Дракул Михоук</h4><p>Величайший фехтовальщик</p><p class="result lose">Поражение</p><p style="font-size: 14px; color: #8a9a8a;">Баратье</p></div>
-                    <div class="enemy-card"><img src="kaido.png" alt="Кайдо"><h4>Кайдо</h4><p>Император</p><p class="result draw">Ранил</p><p style="font-size: 14px; color: #8a9a8a;">Вано</p></div>
-                    <div class="enemy-card"><img src="king-enemy.png" alt="Кинг"><h4>Кинг</h4><p>Правая рука Кайдо</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Вано</p></div>
-                    <div class="enemy-card"><img src="mr1.png" alt="Мистер 1"><h4>Мистер 1</h4><p>Агент Барок Воркс</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Алабаста</p></div>
-                    <div class="enemy-card"><img src="kaku.png" alt="Каку"><h4>Каку</h4><p>CP9, жираф</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Эниес Лобби</p></div>
-                    <div class="enemy-card"><img src="ryuma.png" alt="Рюма"><h4>Рюма</h4><p>Легендарный самурай</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Триллер Барк</p></div>
-                    <div class="enemy-card"><img src="mone.png" alt="Моне"><h4>Моне</h4><p>Подчинённая Цезаря</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Панк Хазард</p></div>
-                    <div class="enemy-card"><img src="hachi.png" alt="Хачи"><h4>Хачи</h4><p>Рыбо-человек</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Арлонг-парк</p></div>
-                    <div class="enemy-card"><img src="morgan.png" alt="Морган"><h4>Капитан Морган</h4><p>Морской пехотинец</p><p class="result win">Победа</p><p style="font-size: 14px; color: #8a9a8a;">Шеллс-Таун</p></div>
+                    <!-- Михоук -->
+                    <div class="enemy-card"><img src="mihawk.png" alt="Михоук"><h4>Дракул Михоук</h4><p>Величайший фехтовальщик</p><p class="result lose">Поражение</p><div class="info">Первая встреча у Баратье. Михоук сломал два меча Зоро, но оставил его в живых, сказав: «Познай себя, познай мир — и стань сильнее».</div><div class="place">📍 Баратье</div></div>
+                    <!-- Кайдо -->
+                    <div class="enemy-card"><img src="kaido.png" alt="Кайдо"><h4>Кайдо</h4><p>Император, сильнейший зверь</p><p class="result draw">Ранил</p><div class="info">Битва на крыше в Вано. Зоро нанёс Кайдо глубокую рану, оставив шрам, который заставил императора уважать его.</div><div class="place">📍 Вано</div></div>
+                    <!-- Кинг -->
+                    <div class="enemy-card"><img src="king-enemy.png" alt="Кинг"><h4>Кинг</h4><p>Правая рука Кайдо</p><p class="result win">Победа</p><div class="info">Эпическая битва в Вано. Зоро использовал Энму и Асуру, чтобы победить Кинга, доказав, что достоин звания «Король Ада».</div><div class="place">📍 Вано</div></div>
+                    <!-- Мистер 1 -->
+                    <div class="enemy-card"><img src="mr1.png" alt="Мистер 1"><h4>Мистер 1</h4><p>Агент Барок Воркс</p><p class="result win">Победа</p><div class="info">Алабаста. Первый серьёзный бой Зоро, где он научился рубить сталь, сказав: «Всё, что я хочу — стать сильнее».</div><div class="place">📍 Алабаста</div></div>
+                    <!-- Каку -->
+                    <div class="enemy-card"><img src="kaku.png" alt="Каку"><h4>Каку</h4><p>CP9, жираф</p><p class="result win">Победа</p><div class="info">Эниес Лобби. Зоро раскрыл Асуру — демоническую форму с 9 мечами, которая сломала защиту Каку.</div><div class="place">📍 Эниес Лобби</div></div>
+                    <!-- Рюма -->
+                    <div class="enemy-card"><img src="ryuma.png" alt="Рюма"><h4>Рюма</h4><p>Легендарный самурай (зомби)</p><p class="result win">Победа</p><div class="info">Триллер Барк. Зоро сразился с легендой и победил, получив благословение Шюсуй — это предвещало его связь с Вано.</div><div class="place">📍 Триллер Барк</div></div>
+                    <!-- Моне -->
+                    <div class="enemy-card"><img src="mone.png" alt="Моне"><h4>Моне</h4><p>Подчинённая Цезаря</p><p class="result win">Победа</p><div class="info">Панк Хазард. Зоро разрезал её пополам, но не убил — это было его новое мастерство контроля силы.</div><div class="place">📍 Панк Хазард</div></div>
+                    <!-- Хачи -->
+                    <div class="enemy-card"><img src="hachi.png" alt="Хачи"><h4>Хачи</h4><p>Рыбо-человек (осьминог)</p><p class="result win">Победа</p><div class="info">Арлонг-парк. Зоро легко разобрался с ним, даже будучи раненым, показав свою несокрушимую волю.</div><div class="place">📍 Арлонг-парк</div></div>
+                    <!-- Морган -->
+                    <div class="enemy-card"><img src="morgan.png" alt="Морган"><h4>Капитан Морган</h4><p>Морской пехотинец</p><p class="result win">Победа</p><div class="info">Шеллс-Таун. Зоро победил Моргана ударом головы — легендарный момент, который показал его характер.</div><div class="place">📍 Шеллс-Таун</div></div>
+                    <!-- Дубликат для конвейера -->
+                    <div class="enemy-card"><img src="mihawk.png" alt="Михоук"><h4>Дракул Михоук</h4><p>Величайший фехтовальщик</p><p class="result lose">Поражение</p><div class="info">Первая встреча у Баратье. Михоук сломал два меча Зоро, но оставил его в живых.</div><div class="place">📍 Баратье</div></div>
+                    <div class="enemy-card"><img src="kaido.png" alt="Кайдо"><h4>Кайдо</h4><p>Император</p><p class="result draw">Ранил</p><div class="info">Битва на крыше в Вано. Зоро нанёс Кайдо глубокую рану.</div><div class="place">📍 Вано</div></div>
+                    <div class="enemy-card"><img src="king-enemy.png" alt="Кинг"><h4>Кинг</h4><p>Правая рука Кайдо</p><p class="result win">Победа</p><div class="info">Эпическая битва в Вано. Зоро использовал Энму и Асуру.</div><div class="place">📍 Вано</div></div>
                 </div>
             </div>
         </div>
