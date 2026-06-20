@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фан-зона Зоро</title>
+    <title>Фан-зона Зоро — шиперинг, мемы, теории</title>
+    <link rel="icon" href="zoro-skull.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -12,7 +13,7 @@
         .poll-options label { display: block; padding: 12px; background: var(--bg); border-radius: 10px; border: 2px solid var(--border); cursor: pointer; text-align: center; transition: 0.3s; }
         .poll-options label:hover { border-color: var(--green); }
         .poll-btn { background: var(--green); color: #fff; border: none; padding: 12px 40px; border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; transition: 0.3s; }
-        .poll-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--green-glow); }
+        .poll-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(26, 138, 58, 0.4); }
         #poll-results { margin-top: 25px; padding: 20px; background: var(--bg); border-radius: 12px; }
         .meme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; margin: 30px 0; }
         .meme-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 20px; text-align: center; transition: 0.3s; }
@@ -24,6 +25,7 @@
         .theory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin: 20px 0; }
         .theory-card { background: var(--card-bg); border-left: 4px solid var(--purple); padding: 20px; border-radius: 8px; transition: 0.3s; }
         .theory-card:hover { border-left-color: var(--gold); }
+        .meme-grid img { max-height: 200px; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -49,19 +51,36 @@
 
     <section class="fan-zone">
         <div class="container">
-            <h2>🎮 Фан-зона <span class="gold">Зоро</span></h2>
-            <p class="section-subtitle">Шиперинг, теории, мемы и всё для фанатов</p>
+            <h2 style="font-family: 'Russo One', sans-serif; font-size: 44px; text-transform: uppercase; letter-spacing: 4px; text-align: center; color: var(--gold);">🎮 Фан-зона Зоро</h2>
+            <p style="text-align: center; color: #8a9a8a; font-size: 18px; margin-bottom: 40px;">Шиперинг, теории, мемы и всё для настоящих фанатов</p>
 
-            <h3 style="margin-top: 40px;">💞 Шиперинг — кто подходит Зоро?</h3>
+            <!-- ШИПЕРИНГ -->
+            <h3 style="font-family: 'Russo One', sans-serif; font-size: 28px; color: var(--gold);">💞 Шиперинг — кто подходит Зоро?</h3>
             <div class="ship-grid">
-                <div class="ship-card"><h4 style="color: var(--gold);">Ташиги</h4><p>Две половинки одной души? От вражды до уважения. Они идеально дополняют друг друга.</p></div>
-                <div class="ship-card"><h4 style="color: var(--gold);">Хёри</h4><p>Тёплые моменты в Вано. Ода намекнул на их связь в SBS.</p></div>
-                <div class="ship-card"><h4 style="color: var(--gold);">Робин</h4><p>Главный шип аниме. Духовная близость и взаимопонимание без слов.</p></div>
-                <div class="ship-card"><h4 style="color: var(--gold);">Нами</h4><p>Токсичные, но забавные отношения. Нами бьёт его, но он спасает её.</p></div>
+                <div class="ship-card">
+                    <h4 style="color: var(--gold);">Ташиги</h4>
+                    <img src="tashigi.png" alt="Зоро и Ташиги" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
+                    <p>Две половинки одной души? От вражды до уважения. Они идеально дополняют друг друга. Ташиги — единственная, кто может бросить вызов его принципам.</p>
+                </div>
+                <div class="ship-card">
+                    <h4 style="color: var(--gold);">Хёри</h4>
+                    <img src="zoro-hyori-1.jpg" alt="Зоро и Хёри 1" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
+                    <img src="zoro-hyori-2.jpg" alt="Зоро и Хёри 2" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
+                    <p>Тёплые моменты в Вано. Ода намекнул на их связь в SBS. Хёри видит в Зоро самурая, достойного её уважения.</p>
+                </div>
+                <div class="ship-card">
+                    <h4 style="color: var(--gold);">Робин</h4>
+                    <p>Главный шип аниме. Духовная близость и взаимопонимание без слов. Они понимают боль друг друга и всегда готовы прийти на помощь.</p>
+                </div>
+                <div class="ship-card">
+                    <h4 style="color: var(--gold);">Нами</h4>
+                    <p>Токсичные, но забавные отношения. Нами бьёт его, но он спасает её в критических ситуациях. Это классика.</p>
+                </div>
             </div>
 
+            <!-- ОПРОС -->
             <div class="poll-section">
-                <h3>👩 Лучшая девушка для Зоро</h3>
+                <h3 style="font-family: 'Russo One', sans-serif; font-size: 24px; color: var(--gold);">👩 Лучшая девушка для Зоро</h3>
                 <p>Проголосуй за свой любимый шип!</p>
                 <form id="zoro-poll">
                     <div class="poll-options">
@@ -77,18 +96,29 @@
                 <div id="poll-results"></div>
             </div>
 
-            <h3>🧠 Теории о Зоро</h3>
+            <!-- ТЕОРИИ -->
+            <h3 style="font-family: 'Russo One', sans-serif; font-size: 28px; color: var(--gold);">🧠 Теории о Зоро</h3>
             <div class="theory-grid">
-                <div class="theory-card"><h4 style="color: var(--gold);">Зоро — потомок Рюмы</h4><p>Подтверждено в манге. Связь с легендарным самураем.</p></div>
-                <div class="theory-card"><h4 style="color: var(--gold);">Энма разбудит его силу</h4><p>Зоро станет сильнее, чем когда-либо.</p></div>
-                <div class="theory-card"><h4 style="color: var(--gold);">Зоро умрёт в финале?</h4><p>Тёмная теория, основанная на пророчествах.</p></div>
+                <div class="theory-card"><h4 style="color: var(--gold);">Зоро — потомок Рюмы</h4><p>Подтверждено в манге. Связь с легендарным самураем из Вано.</p></div>
+                <div class="theory-card"><h4 style="color: var(--gold);">Энма разбудит его силу</h4><p>Зоро станет сильнее, чем когда-либо, когда полностью овладеет Энмой.</p></div>
+                <div class="theory-card"><h4 style="color: var(--gold);">Зоро умрёт в финале?</h4><p>Тёмная теория, основанная на пророчествах и его клятве.</p></div>
             </div>
 
-            <h3>😂 Мемы про навигацию Зоро</h3>
+            <!-- МЕМЫ -->
+            <h3 style="font-family: 'Russo One', sans-serif; font-size: 28px; color: var(--gold);">😂 Мемы про навигацию Зоро</h3>
             <div class="meme-grid">
-                <div class="meme-card"><img src="lost.jpg" alt="Зоро потерялся"><p>"Я точно знаю, где мы находимся... кажется..."</p></div>
-                <div class="meme-card"><div style="font-size: 60px; margin: 20px 0;">😵</div><p>"Навигация — моя слабость"</p></div>
-                <div class="meme-card"><div style="font-size: 60px; margin: 20px 0;">🗺️</div><p>"Я никогда не теряюсь. Я просто нахожу новые пути"</p></div>
+                <div class="meme-card">
+                    <img src="lost.jpg" alt="Зоро потерялся">
+                    <p>"Я точно знаю, где мы находимся... кажется..."</p>
+                </div>
+                <div class="meme-card">
+                    <img src="meme-navigation-1.jpg" alt="Мем про навигацию Зоро 1">
+                    <p>"Навигация — моя слабость"</p>
+                </div>
+                <div class="meme-card">
+                    <img src="meme-navigation-2.jpg" alt="Мем про навигацию Зоро 2">
+                    <p>"Я никогда не теряюсь. Я просто нахожу новые пути"</p>
+                </div>
             </div>
         </div>
     </section>
