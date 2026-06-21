@@ -8,17 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .crew-relations-container { overflow: hidden; position: relative; padding: 20px 0; }
-        .crew-relations-track { display: flex; gap: 30px; animation: scrollCrew 35s linear infinite; width: max-content; }
+        .crew-relations-container { overflow: hidden; position: relative; padding: 25px 0; }
+        .crew-relations-track { display: flex; gap: 40px; animation: scrollCrew 35s linear infinite; width: max-content; }
         @keyframes scrollCrew { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .crew-relation-card { flex: 0 0 300px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 25px 20px; text-align: center; transition: 0.4s; min-height: 460px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .crew-relation-card:hover { transform: scale(1.05) translateY(-10px); border-color: var(--green); box-shadow: 0 20px 60px rgba(26, 138, 58, 0.2); }
-        .crew-relation-card img { width: 100px; height: 100px; border-radius: 50%; object-fit: contain; border: 3px solid var(--border); margin-bottom: 15px; background: var(--bg); padding: 10px; }
-        .crew-relation-card h4 { font-family: 'Russo One', sans-serif; font-size: 22px; margin-bottom: 5px; }
-        .crew-relation-card .role { color: var(--gold); font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
-        .crew-relation-card .quote { font-style: italic; color: #b0c0b0; margin: 10px 0; font-size: 14px; border-left: 3px solid var(--gold); padding-left: 15px; text-align: left; }
-        .crew-relation-card .relation { font-size: 14px; color: #8a9a8a; line-height: 1.6; }
-        .crew-relations-about { text-align: center; margin-bottom: 30px; font-size: 18px; color: #b0c0b0; }
+        .crew-relation-card {
+            flex: 0 0 320px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: all var(--transition);
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .crew-relation-card:hover { transform: scale(1.05) translateY(-10px); border-color: var(--green); box-shadow: 0 20px 60px var(--shadow); }
+        .crew-relation-card img { width: 110px; height: 110px; object-fit: contain; border-radius: 50%; border: 3px solid var(--border); margin-bottom: 12px; background: var(--bg); padding: 8px; }
+        .crew-relation-card h4 { font-family: 'Russo One', sans-serif; font-size: 20px; }
+        .crew-relation-card .role { color: var(--gold); font-weight: 700; font-size: 13px; text-transform: uppercase; }
+        .crew-relation-card .quote { font-style: italic; color: var(--text-dark); margin: 8px 0; font-size: 13px; border-left: 3px solid var(--gold); padding-left: 12px; text-align: left; }
+        .crew-relation-card .relation { font-size: 14px; color: var(--text-dark); line-height: 1.8; }
+        .crew-wano-section { margin-top: 40px; text-align: center; }
+        .crew-wano-section .image-frame { max-width: 80%; margin: 0 auto; }
     </style>
 </head>
 <body>
@@ -27,75 +41,72 @@
         <div class="container header-inner">
             <div class="logo">
                 <img src="zoro-skull.png" alt="Герб Зоро" class="logo-skull">
-                <span>Z<span class="green">O</span>RO</span>
+                <span class="anim-text">Z<span class="green">O</span>RO</span>
             </div>
             <nav class="nav">
-                <a href="index.html">Главная</a>
-                <a href="bio.html">Биография</a>
-                <a href="swords.html">Мечи</a>
-                <a href="enemies.html">Враги</a>
-                <a href="crew-relations.html">Команда</a>
-                <a href="fan.html">Фан-зона</a>
-                <a href="robin-zoro.html">Робин & Зоро</a>
-                <a href="awards.html">Награды</a>
+                <a href="index.html" class="anim-text">Главная</a>
+                <a href="bio.html" class="anim-text">Биография</a>
+                <a href="swords.html" class="anim-text">Мечи</a>
+                <a href="enemies.html" class="anim-text">Враги</a>
+                <a href="crew-relations.html" class="anim-text">Команда</a>
+                <a href="fan.html" class="anim-text">Фан-зона</a>
+                <a href="awards.html" class="anim-text">Награды</a>
+                <div class="lang-group">
+                    <button class="lang-btn active" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="kk">KK</button>
+                    <button class="lang-btn" data-lang="ja">JA</button>
+                    <button class="lang-btn" data-lang="zh">ZH</button>
+                </div>
+                <div class="theme-group">
+                    <button class="theme-btn active" data-theme="mixed">🌓</button>
+                    <button class="theme-btn" data-theme="light">☀️</button>
+                    <button class="theme-btn" data-theme="dark">🌙</button>
+                </div>
+                <button class="auth-btn anim-text">🔑 Войти</button>
             </nav>
         </div>
     </header>
 
     <section class="crew-relations">
         <div class="container">
-            <h2 style="font-family: 'Russo One', sans-serif; font-size: 44px; text-transform: uppercase; letter-spacing: 4px; text-align: center; color: var(--gold);">🏴‍☠️ Зоро и его команда</h2>
-            <p class="section-subtitle" style="text-align: center; color: #8a9a8a; font-size: 18px; margin-bottom: 20px;">Как вице-капитан относится к каждому из Мугивар — цитаты, история и взаимоотношения</p>
-            <div class="crew-relations-about">
-                <p style="max-width: 800px; margin: 0 auto;">Зоро не просто мечник — он защитник. Его отношения с командой строятся на доверии, уважении и готовности отдать жизнь за каждого. Здесь собраны истории знакомства, цитаты и то, как Зоро видит своих товарищей.</p>
+            <h2 class="anim-title" style="font-family: 'Russo One', sans-serif; font-size: 40px; text-transform: uppercase; letter-spacing: 4px; text-align: center; color: var(--gold);">🏴‍☠️ Зоро и его команда</h2>
+            <p class="anim-text" style="text-align: center; color: var(--text-dark); font-size: 17px; margin-bottom: 20px;">Как вице-капитан относится к каждому из Мугивар — цитаты, история и взаимоотношения</p>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 25px;">
+                <p class="anim-text" style="color: var(--text-dark); line-height: 2; font-size: 15px;">Зоро не просто мечник — он защитник. Его отношения с командой строятся на доверии, уважении и готовности отдать жизнь за каждого. Здесь собраны истории знакомства, цитаты и то, как Зоро видит своих товарищей.</p>
             </div>
 
             <div class="crew-relations-container">
                 <div class="crew-relations-track">
-                    <!-- ЛУФФИ -->
-                    <div class="crew-relation-card"><img src="luffy.png" alt="Луффи"><h4>Монки Д. Луффи</h4><p class="role">Капитан</p><div class="quote">«Если капитан не может защитить своих друзей, я сделаю это за него»</div><div class="relation">Глубочайшее доверие и уважение. Зоро — его правая рука. Луффи знает, что Зоро никогда не предаст. Их связь началась в Шеллс-Тауне, где Луффи освободил Зоро.</div></div>
-                    <!-- НАМИ -->
-                    <div class="crew-relation-card"><img src="nami.png" alt="Нами"><h4>Нами</h4><p class="role">Штурман</p><div class="quote">«Нами — слабая, но она важна для команды»</div><div class="relation">Вечные подколы и споры (особенно из-за долгов), но в бою — абсолютная поддержка. Зоро доверяет её штурманским навыкам, хоть и не признаёт этого.</div></div>
-                    <!-- УСОПП -->
-                    <div class="crew-relation-card"><img src="usopp.png" alt="Усопп"><h4>Усопп</h4><p class="role">Снайпер</p><div class="quote">«Трус — это не страшно. Страшно, когда ты не пытаешься»</div><div class="relation">Сначала несерьёзно, но после Эниес Лобби Зоро начал уважать Усоппа как бойца. Он подбадривает его в трудные моменты.</div></div>
-                    <!-- САНДЖИ -->
-                    <div class="crew-relation-card"><img src="sanji.png" alt="Санджи"><h4>Санджи</h4><p class="role">Кок</p><div class="quote">«Я убью этого кока-дурака... но только после того, как он приготовит мне мясо»</div><div class="relation">Легендарная вражда! Вечно ссорятся, но в бою — идеальная команда. Зоро готов защищать Санджи, хоть и не покажет этого.</div></div>
-                    <!-- ЧОППЕР -->
-                    <div class="crew-relation-card"><img src="chopper.png" alt="Чоппер"><h4>Тони Тони Чоппер</h4><p class="role">Врач</p><div class="quote">«Чоппер — слабый. Но он нужен нам»</div><div class="relation">Относится как к младшему брату. Уважает его как врача и защищает как слабого члена команды.</div></div>
-                    <!-- РОБИН -->
-                    <div class="crew-relation-card"><img src="robin.png" alt="Робин"><h4>Нико Робин</h4><p class="role">Археолог</p><div class="quote">«Робин сильная. Ей не нужна защита, но она её получит»</div><div class="relation">Глубокое взаимное уважение. Зоро видит в Робин мудрость, а она видит в нём силу. Понимают друг друга без слов.</div></div>
-                    <!-- ФРЭНКИ -->
-                    <div class="crew-relation-card"><img src="franky.png" alt="Фрэнки"><h4>Фрэнки</h4><p class="role">Корабельный плотник</p><div class="quote">«Фрэнки — странный, но его корабль — лучший»</div><div class="relation">Уважение за силу. Фрэнки восхищается мечами Зоро, а Зоро уважает его за то, что он построил Тысячелетнего Санни.</div></div>
-                    <!-- БРУК -->
-                    <div class="crew-relation-card"><img src="brook.png" alt="Брук"><h4>Брук</h4><p class="role">Музыкант</p><div class="quote">«Этот скелет... он старше меня. Я должен его уважать»</div><div class="relation">Относится с лёгким недоумением, но уважает его возраст и верность команде.</div></div>
-                    <!-- ДЗИНБЭ -->
-                    <div class="crew-relation-card"><img src="jinbe.png" alt="Дзинбэ"><h4>Дзинбэ</h4><p class="role">Рулевой</p><div class="quote">«Дзинбэ — достойный воин. Я рад, что он с нами»</div><div class="relation">Взаимное уважение как бойцов. Зоро видит в Дзинбэ сильного союзника.</div></div>
-                    <!-- ДУБЛИКАТЫ ДЛЯ КОНВЕЙЕРА -->
-                    <div class="crew-relation-card"><img src="luffy.png" alt="Луффи"><h4>Монки Д. Луффи</h4><p class="role">Капитан</p><div class="quote">«Если капитан не может защитить своих друзей, я сделаю это за него»</div><div class="relation">Правая рука капитана. Доверие безгранично.</div></div>
-                    <div class="crew-relation-card"><img src="nami.png" alt="Нами"><h4>Нами</h4><p class="role">Штурман</p><div class="quote">«Нами — слабая, но она важна для команды»</div><div class="relation">Подколы и поддержка в бою.</div></div>
-                    <div class="crew-relation-card"><img src="sanji.png" alt="Санджи"><h4>Санджи</h4><p class="role">Кок</p><div class="quote">«Я убью этого кока-дурака...»</div><div class="relation">Вражда, но в бою — идеальная команда.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="luffy.png" alt="Луффи"></div><h4>Монки Д. Луффи</h4><p class="role">Капитан</p><div class="quote">«Если капитан не может защитить своих друзей, я сделаю это за него»</div><div class="relation">Глубочайшее доверие и уважение. Зоро — его правая рука. Луффи знает, что Зоро никогда не предаст. Их связь началась в Шеллс-Тауне.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="nami.png" alt="Нами"></div><h4>Нами</h4><p class="role">Штурман</p><div class="quote">«Нами — слабая, но она важна для команды»</div><div class="relation">Вечные подколы и споры, но в бою — абсолютная поддержка. Зоро доверяет её штурманским навыкам, хоть и не признаёт этого.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="usopp.png" alt="Усопп"></div><h4>Усопп</h4><p class="role">Снайпер</p><div class="quote">«Трус — это не страшно. Страшно, когда ты не пытаешься»</div><div class="relation">Сначала несерьёзно, но после Эниес Лобби Зоро начал уважать Усоппа как бойца. Он подбадривает его в трудные моменты.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="sanji.png" alt="Санджи"></div><h4>Санджи</h4><p class="role">Кок</p><div class="quote">«Я убью этого кока-дурака... но только после того, как он приготовит мне мясо»</div><div class="relation">Легендарная вражда! Вечно ссорятся, но в бою — идеальная команда. Зоро готов защищать Санджи, хоть и не покажет этого.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="chopper.png" alt="Чоппер"></div><h4>Тони Тони Чоппер</h4><p class="role">Врач</p><div class="quote">«Чоппер — слабый. Но он нужен нам»</div><div class="relation">Относится как к младшему брату. Уважает его как врача и защищает как слабого члена команды.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="robin.png" alt="Робин"></div><h4>Нико Робин</h4><p class="role">Археолог</p><div class="quote">«Робин сильная. Ей не нужна защита, но она её получит»</div><div class="relation">Глубокое взаимное уважение. Зоро видит в Робин мудрость, а она видит в нём силу. Понимают друг друга без слов.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="franky.png" alt="Фрэнки"></div><h4>Фрэнки</h4><p class="role">Корабельный плотник</p><div class="quote">«Фрэнки — странный, но его корабль — лучший»</div><div class="relation">Уважение за силу. Фрэнки восхищается мечами Зоро, а Зоро уважает его за то, что он построил Тысячелетнего Санни.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="brook.png" alt="Брук"></div><h4>Брук</h4><p class="role">Музыкант</p><div class="quote">«Этот скелет... он старше меня. Я должен его уважать»</div><div class="relation">Относится с лёгким недоумением, но уважает его возраст и верность команде.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="jinbe.png" alt="Дзинбэ"></div><h4>Дзинбэ</h4><p class="role">Рулевой</p><div class="quote">«Дзинбэ — достойный воин. Я рад, что он с нами»</div><div class="relation">Взаимное уважение как бойцов. Зоро видит в Дзинбэ сильного союзника.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="luffy.png" alt="Луффи"></div><h4>Монки Д. Луффи</h4><p class="role">Капитан</p><div class="quote">«Если капитан не может защитить своих друзей...»</div><div class="relation">Правая рука капитана. Доверие безгранично.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="nami.png" alt="Нами"></div><h4>Нами</h4><p class="role">Штурман</p><div class="quote">«Нами — слабая, но она важна»</div><div class="relation">Подколы и поддержка в бою.</div></div>
+                    <div class="crew-relation-card anim-text"><div class="image-frame"><img src="sanji.png" alt="Санджи"></div><h4>Санджи</h4><p class="role">Кок</p><div class="quote">«Я убью этого кока-дурака...»</div><div class="relation">Вражда, но в бою — идеальная команда.</div></div>
                 </div>
             </div>
 
-            <!-- ОБЩАЯ КАРТИНКА КОМАНДЫ -->
-            <div style="text-align: center; margin-top: 40px;">
-                <h3 style="font-family: 'Russo One', sans-serif; font-size: 28px; color: var(--gold);">🏴‍☠️ Вся команда вместе</h3>
-                <img src="crew.png" alt="Команда Мугивар" style="max-width: 80%; border-radius: 16px; border: 2px solid var(--border); margin-top: 15px;">
+            <div class="crew-wano-section">
+                <h3 class="anim-title" style="font-family: 'Russo One', sans-serif; font-size: 26px; color: var(--gold);">🏴‍☠️ Команда в арке Вано</h3>
+                <div class="image-frame"><img src="crew-wano.png" alt="Команда Мугивар в Вано"></div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="zoro-skull.png" alt="Герб Зоро" class="footer-skull">
-                <span>Z<span class="green">O</span>RO</span>
-            </div>
             <div class="footer-links">
-                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn">Смотреть аниме</a>
-                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn">Вики Зоро</a>
+                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-text">Смотреть аниме</a>
+                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-text">Вики Зоро</a>
             </div>
-            <div class="footer-copy">
+            <div class="footer-copy anim-text">
                 <p>Создано фанатом для фанатов. Вся информация проверена по манге и SBS.</p>
                 <p>© 2026 — Roronoa Zoro Fan Site</p>
             </div>
