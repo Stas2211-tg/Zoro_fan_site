@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фан-зона Зоро</title>
     <link rel="icon" href="zoro-skull.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIST+Inking&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         .poll-section {
@@ -74,7 +74,7 @@
             box-shadow: 0 15px 40px var(--shadow);
         }
         .ship-card h4 {
-            font-family: 'Russo One', sans-serif;
+            font-family: 'DIST Inking', 'Russo One', cursive;
             font-size: 20px;
             color: var(--gold);
         }
@@ -105,7 +105,7 @@
             transform: translateX(6px);
         }
         .theory-card h4 {
-            font-family: 'Russo One', sans-serif;
+            font-family: 'DIST Inking', 'Russo One', cursive;
             font-size: 18px;
             color: var(--gold);
         }
@@ -141,6 +141,57 @@
         }
         .game-wrapper .game-area {
             cursor: none;
+        }
+        .game-wrapper {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .game-wrapper .game-area {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: radial-gradient(ellipse at center, #1a2a1a, #0d120d);
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .game-wrapper .game-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            transition: all var(--transition);
+            z-index: 10;
+            filter: drop-shadow(0 0 10px var(--green-glow));
+            display: none;
+        }
+        .game-wrapper .game-close:hover {
+            transform: rotate(180deg) scale(1.2);
+            filter: drop-shadow(0 0 25px var(--green-glow));
+        }
+        .game-wrapper .game-close img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .game-wrapper .game-score {
+            font-family: 'DIST Inking', 'Russo One', cursive;
+            font-size: 28px;
+            color: var(--gold);
+            text-shadow: 0 0 30px var(--gold-glow);
+            margin-top: 10px;
+        }
+        .game-wrapper .btn {
+            margin: 15px 0;
         }
     </style>
 </head>
@@ -180,11 +231,11 @@
 
     <section class="fan-zone">
         <div class="container">
-            <h2 class="anim-glitch">🎮 Фан-зона <span class="gold">Зоро</span></h2>
+            <h2 class="anim-glitch" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 40px; text-transform: uppercase; text-align: center; color: var(--gold);">🎮 Фан-зона <span class="gold">Зоро</span></h2>
             <p class="section-subtitle anim-fade">Шиперинг, голосования, теории, мемы и игра для настоящих фанатов</p>
 
             <!-- ШИПЕРИНГ -->
-            <h3 class="anim-glitch" style="font-family: 'Russo One', sans-serif; font-size: 26px; color: var(--gold);">💞 Шиперинг — кто подходит Зоро?</h3>
+            <h3 class="anim-glitch" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 26px; color: var(--gold);">💞 Шиперинг — кто подходит Зоро?</h3>
             <div class="ship-grid">
                 <div class="ship-card anim-fade">
                     <h4>Ташиги</h4>
@@ -202,7 +253,7 @@
                     <h4>Робин</h4>
                     <div class="image-frame"><img src="robin-zoro-1.png" alt="Робин и Зоро 1"></div>
                     <div class="image-frame" style="margin-top: 10px;"><img src="robin-zoro-2.png" alt="Робин и Зоро 2"></div>
-                    <p>Главный шип аниме. Духовная близость и взаимопонимание без слов. Они понимают боль друг друга.</p>
+                    <p>Главный шип аниме. Духовная близость и взаимопонимание без слов. Они понимают боль друг друга и всегда готовы прийти на помощь. Их редкие моменты — одни из самых тёплых в аниме.</p>
                 </div>
                 <div class="ship-card anim-fade">
                     <h4>Нами</h4>
@@ -213,12 +264,12 @@
             </div>
 
             <!-- ИГРА -->
-            <div class="game-wrapper anim-fade" style="margin: 40px 0;">
-                <h3 class="anim-glitch" style="font-family: 'Russo One', sans-serif; font-size: 26px; color: var(--gold);">⚔️ Разрежь ядра!</h3>
+            <div class="game-wrapper anim-fade">
+                <h3 class="anim-glitch" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 26px; color: var(--gold);">⚔️ Разрежь ядра!</h3>
                 <p style="color: var(--text-dark);">Зажми левую кнопку мыши и води по экрану, чтобы разрезать падающие ядра.</p>
-                <button id="game-start" class="btn btn-gold" style="margin: 15px 0;">Начать игру</button>
+                <button id="game-start" class="btn btn-gold">Начать игру</button>
                 <div class="game-area" id="game-area">
-                    <div class="game-close" style="display: none;">
+                    <div class="game-close" id="game-close">
                         <img src="zoro-skull.png" alt="Закрыть игру">
                     </div>
                 </div>
@@ -227,7 +278,7 @@
 
             <!-- ГОЛОСОВАНИЯ -->
             <div class="poll-section anim-fade">
-                <h3 style="font-family: 'Russo One', sans-serif; font-size: 22px; color: var(--gold);">👩 Лучшая девушка для Зоро</h3>
+                <h3 style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 22px; color: var(--gold);">👩 Лучшая девушка для Зоро</h3>
                 <p>Проголосуй за свой любимый шип (только после входа)</p>
                 <form class="poll-form" data-poll="best-girl">
                     <div class="poll-options">
@@ -244,7 +295,7 @@
             </div>
 
             <div class="poll-section anim-fade">
-                <h3 style="font-family: 'Russo One', sans-serif; font-size: 22px; color: var(--gold);">🏴‍☠️ Лучший соратник Зоро</h3>
+                <h3 style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 22px; color: var(--gold);">🏴‍☠️ Лучший соратник Зоро</h3>
                 <p>Кто из команды ближе всего Зоро? (только после входа)</p>
                 <form class="poll-form" data-poll="best-crew">
                     <div class="poll-options">
@@ -253,7 +304,6 @@
                         <label><input type="radio" name="crew" value="Усопп"> Усопп</label>
                         <label><input type="radio" name="crew" value="Санджи"> Санджи</label>
                         <label><input type="radio" name="crew" value="Чоппер"> Чоппер</label>
-                        <label><input type="radio" name="crew" value="Робин"> Робин</label>
                         <label><input type="radio" name="crew" value="Фрэнки"> Фрэнки</label>
                         <label><input type="radio" name="crew" value="Брук"> Брук</label>
                         <label><input type="radio" name="crew" value="Дзинбэ"> Дзинбэ</label>
@@ -264,7 +314,7 @@
             </div>
 
             <div class="poll-section anim-fade">
-                <h3 style="font-family: 'Russo One', sans-serif; font-size: 22px; color: var(--gold);">⚔️ Сильнейший враг Зоро</h3>
+                <h3 style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 22px; color: var(--gold);">⚔️ Сильнейший враг Зоро</h3>
                 <p>Кто был самым опасным противником? (только после входа)</p>
                 <form class="poll-form" data-poll="best-enemy">
                     <div class="poll-options">
@@ -286,7 +336,7 @@
             </div>
 
             <!-- ТЕОРИИ -->
-            <h3 class="anim-glitch" style="font-family: 'Russo One', sans-serif; font-size: 26px; color: var(--gold); margin-top: 40px;">🧠 Теории о Зоро</h3>
+            <h3 class="anim-glitch" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 26px; color: var(--gold); margin-top: 40px;">🧠 Теории о Зоро</h3>
             <div class="theory-grid">
                 <div class="theory-card anim-fade">
                     <h4>Зоро — потомок Рюмы</h4>
@@ -303,7 +353,7 @@
             </div>
 
             <!-- МЕМЫ -->
-            <h3 class="anim-glitch" style="font-family: 'Russo One', sans-serif; font-size: 26px; color: var(--gold);">😂 Мемы про навигацию Зоро</h3>
+            <h3 class="anim-glitch" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 26px; color: var(--gold);">😂 Мемы про навигацию Зоро</h3>
             <div class="meme-grid">
                 <div class="meme-card anim-fade">
                     <div class="image-frame"><img src="lost.jpg" alt="Зоро потерялся"></div>
