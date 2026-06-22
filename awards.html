@@ -3,21 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Награды Зоро — Достижения</title>
+    <title>Награды Зоро</title>
     <link rel="icon" href="zoro-skull.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .award-timeline { max-width: 800px; margin: 0 auto; }
-        .award-item { display: flex; gap: 20px; margin-bottom: 25px; padding: 25px; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border); transition: all var(--transition); align-items: center; }
-        .award-item:hover { border-color: var(--gold); transform: translateX(10px); }
-        .award-number { font-family: 'Russo One', sans-serif; font-size: 32px; color: var(--gold); min-width: 60px; text-align: center; }
-        .award-item img { max-width: 180px; border-radius: 12px; margin-top: 10px; border: 2px solid var(--border); transition: all var(--transition); }
-        .award-item img:hover { border-color: var(--gold); transform: scale(1.02); }
-        .wins-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
-        .win-item { background: var(--card-bg); padding: 14px; border-radius: 10px; border: 1px solid var(--border); text-align: center; font-weight: 700; transition: all var(--transition); }
-        .win-item:hover { border-color: var(--green); transform: scale(1.03); }
-        @media (max-width: 576px) { .award-item { flex-direction: column; text-align: center; } }
+        .award-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .award-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            transition: all var(--transition);
+            align-items: center;
+        }
+        .award-item:hover {
+            border-color: var(--gold);
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+        .award-number {
+            font-family: 'Russo One', sans-serif;
+            font-size: 32px;
+            color: var(--gold);
+            min-width: 60px;
+            text-align: center;
+        }
+        .award-item img {
+            max-width: 180px;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: 2px solid var(--border);
+            transition: all var(--transition);
+        }
+        .award-item img:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+        .wins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .win-item {
+            background: var(--card-bg);
+            padding: 14px;
+            border-radius: 10px;
+            border: 2px solid var(--border);
+            text-align: center;
+            font-weight: 700;
+            transition: all var(--transition);
+        }
+        .win-item:hover {
+            border-color: var(--green);
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+        @media (max-width: 576px) {
+            .award-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -26,81 +80,88 @@
         <div class="container header-inner">
             <div class="logo">
                 <img src="zoro-skull.png" alt="Герб Зоро" class="logo-skull">
-                <span class="anim-text">Z<span class="green">O</span>RO</span>
+                <span class="anim-fade">Z<span class="green">O</span>RO</span>
             </div>
             <nav class="nav">
-                <a href="index.html" class="anim-text">Главная</a>
-                <a href="bio.html" class="anim-text">Биография</a>
-                <a href="swords.html" class="anim-text">Мечи</a>
-                <a href="enemies.html" class="anim-text">Враги</a>
-                <a href="crew-relations.html" class="anim-text">Команда</a>
-                <a href="fan.html" class="anim-text">Фан-зона</a>
-                <a href="awards.html" class="anim-text">Награды</a>
-                <div class="lang-group">
-                    <button class="lang-btn active" data-lang="ru">RU</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="kk">KK</button>
-                    <button class="lang-btn" data-lang="ja">JA</button>
-                    <button class="lang-btn" data-lang="zh">ZH</button>
+                <a href="index.html" class="anim-fade">Главная</a>
+                <a href="bio.html" class="anim-fade">Биография</a>
+                <a href="swords.html" class="anim-fade">Мечи</a>
+                <a href="enemies.html" class="anim-fade">Враги</a>
+                <a href="crew-relations.html" class="anim-fade">Команда</a>
+                <a href="fan.html" class="anim-fade">Фан-зона</a>
+                <a href="awards.html" class="anim-fade">Награды</a>
+                <div class="lang-dropdown">
+                    <button class="lang-toggle anim-fade">🌐 RU</button>
+                    <div class="lang-menu">
+                        <button data-lang="ru" class="active-lang">🇷🇺 Русский</button>
+                        <button data-lang="en">🇬🇧 English</button>
+                        <button data-lang="kk">🇰🇿 Қазақша</button>
+                        <button data-lang="ja">🇯🇵 日本語</button>
+                        <button data-lang="zh">🇨🇳 中文</button>
+                    </div>
                 </div>
-                <div class="theme-group">
-                    <button class="theme-btn active" data-theme="mixed">🌓</button>
-                    <button class="theme-btn" data-theme="light">☀️</button>
-                    <button class="theme-btn" data-theme="dark">🌙</button>
-                </div>
-                <button class="auth-btn anim-text">🔑 Войти</button>
+                <button class="theme-btn anim-fade" data-theme="mixed">🌓</button>
+                <button class="theme-btn anim-fade" data-theme="light">☀️</button>
+                <button class="theme-btn anim-fade" data-theme="dark">🌙</button>
+                <button class="auth-btn anim-fade">🔑 Войти</button>
             </nav>
         </div>
     </header>
 
     <section class="awards">
         <div class="container">
-            <h2 class="anim-title" style="font-family: 'Russo One', sans-serif; font-size: 40px; text-transform: uppercase; letter-spacing: 4px; text-align: center; color: var(--gold);">🏆 Награды Зоро</h2>
-            <p class="anim-text" style="text-align: center; color: var(--text-dark); font-size: 17px; margin-bottom: 35px;">Хронология наград и главные достижения, которые изменили его жизнь</p>
+            <h2 class="anim-glitch">🏆 Награды и достижения <span class="gold">Зоро</span></h2>
+            <p class="section-subtitle anim-fade">Хронология наград и главные достижения, которые изменили его жизнь</p>
 
             <div class="award-timeline">
-                <div class="award-item anim-text">
+                <div class="award-item anim-fade">
                     <div class="award-number">1</div>
                     <div>
                         <h3 style="color: var(--gold); font-family: 'Russo One', sans-serif; font-size: 22px;">60 000 000 бери</h3>
-                        <p>Первая награда после битвы с Барок Воркс. Зоро показал себя как сильный боец. Это была его первая официальная награда, которая сделала его известным в мире.</p>
+                        <p>Первая награда после битвы с Барок Воркс. Зоро показал себя как сильный боец. Это была его первая официальная награда, которая сделала его известным в мире. Она стала началом его легенды как охотника на пиратов.</p>
                         <div class="image-frame"><img src="bounty-60m.jpg" alt="Награда 60 млн"></div>
                     </div>
                 </div>
-                <div class="award-item anim-text">
+                <div class="award-item anim-fade">
                     <div class="award-number">2</div>
                     <div>
                         <h3 style="color: var(--gold); font-family: 'Russo One', sans-serif; font-size: 22px;">120 000 000 бери</h3>
-                        <p>После событий в Эниес Лобби. Зоро раскрыл Асуру и стал угрозой Мировому правительству. Эта награда показала, что он больше не просто охотник на пиратов, а важная фигура в мире.</p>
+                        <p>После событий в Эниес Лобби. Зоро раскрыл Асуру и стал угрозой Мировому правительству. Эта награда показала, что он больше не просто охотник на пиратов, а важная фигура в мире, способная бросить вызов системе.</p>
                         <div class="image-frame"><img src="bounty-120m.jpg" alt="Награда 120 млн"></div>
                     </div>
                 </div>
-                <div class="award-item anim-text">
+                <div class="award-item anim-fade">
                     <div class="award-number">3</div>
                     <div>
                         <h3 style="color: var(--gold); font-family: 'Russo One', sans-serif; font-size: 22px;">320 000 000 бери</h3>
-                        <p>После битвы на Дрессарозе. Зоро победил Пайку и укрепил репутацию команды. Эта награда стала подтверждением его растущей силы и влияния.</p>
+                        <p>После битвы на Дрессарозе. Зоро победил Пайку и укрепил репутацию команды. Эта награда стала подтверждением его растущей силы и влияния. Его имя стало известно во всём мире.</p>
                         <div class="image-frame"><img src="bounty-320m.jpg" alt="Награда 320 млн"></div>
                     </div>
                 </div>
-                <div class="award-item anim-text">
+                <div class="award-item anim-fade">
                     <div class="award-number">4</div>
                     <div>
                         <h3 style="color: var(--gold); font-family: 'Russo One', sans-serif; font-size: 22px;">1 111 000 000 бери</h3>
-                        <p>После победы над Кингом в Вано. Зоро стал «Королём Ада» и его награда превысила миллиард. Это была его самая большая награда, которая подтвердила его статус одного из сильнейших мечников в мире.</p>
+                        <p>После победы над Кингом в Вано. Зоро стал «Королём Ада» и его награда превысила миллиард. Это была его самая большая награда, которая подтвердила его статус одного из сильнейших мечников в мире. Теперь его имя известно каждому пирату.</p>
                         <div class="image-frame"><img src="bounty-1b.jpg" alt="Награда 1 млрд"></div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="anim-title" style="font-family: 'Russo One', sans-serif; font-size: 26px; text-align: center; color: var(--gold); margin-top: 40px;">⚔️ Главные победы Зоро</h3>
+            <h2 class="anim-glitch" style="margin-top: 50px;">⚔️ Главные победы <span class="gold">Зоро</span></h2>
+            <p class="section-subtitle anim-fade">Список самых значимых побед в его карьере</p>
+
             <div class="wins-grid">
-                <div class="win-item anim-text">Мистер 1 (Алабаста)</div>
-                <div class="win-item anim-text">Каку (Эниес Лобби)</div>
-                <div class="win-item anim-text">Рюма (Триллер Барк)</div>
-                <div class="win-item anim-text">Моне (Панк Хазард)</div>
-                <div class="win-item anim-text">Кинг (Вано)</div>
-                <div class="win-item anim-text">Кайдо (нанёс удар)</div>
+                <div class="win-item anim-fade">Мистер 1 (Алабаста)</div>
+                <div class="win-item anim-fade">Каку (Эниес Лобби)</div>
+                <div class="win-item anim-fade">Рюма (Триллер Барк)</div>
+                <div class="win-item anim-fade">Моне (Панк Хазард)</div>
+                <div class="win-item anim-fade">Кинг (Вано)</div>
+                <div class="win-item anim-fade">Кайдо (нанёс удар)</div>
+                <div class="win-item anim-fade">Альвида (Восточный Блю)</div>
+                <div class="win-item anim-fade">Дон Криг (Восточный Блю)</div>
+                <div class="win-item anim-fade">Капитан Морган (Шеллс-Таун)</div>
+                <div class="win-item anim-fade">Хачи (Арлонг-парк)</div>
             </div>
         </div>
     </section>
@@ -108,10 +169,12 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-links">
-                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-text">Смотреть аниме</a>
-                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-text">Вики Зоро</a>
+                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-fade">Смотреть аниме</a>
+                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade">Вики Зоро</a>
+                <a href="https://anime-characters-fight.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade">Фандом</a>
+                <a href="https://ru.pinterest.com/rebynok05/roronoa-zoro/" target="_blank" class="footer-btn anim-fade">Pinterest</a>
             </div>
-            <div class="footer-copy anim-text">
+            <div class="footer-copy anim-fade">
                 <p>Создано фанатом для фанатов. Вся информация проверена по манге и SBS.</p>
                 <p>© 2026 — Roronoa Zoro Fan Site</p>
             </div>
