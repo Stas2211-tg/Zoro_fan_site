@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Биография Ророноа Зоро</title>
     <link rel="icon" href="zoro-skull.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIST+Inking&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         .bio-grid {
@@ -15,8 +15,8 @@
             margin: 40px 0;
         }
         .bio-text h3 {
-            font-family: 'Russo One', sans-serif;
-            font-size: 24px;
+            font-family: 'DIST Inking', 'Russo One', cursive;
+            font-size: 26px;
             color: var(--gold);
             margin-top: 28px;
             margin-bottom: 10px;
@@ -28,6 +28,43 @@
         }
         .family-tree-section {
             margin: 40px 0;
+        }
+        .family-tree-section h2 {
+            font-family: 'DIST Inking', 'Russo One', cursive;
+            font-size: 38px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .family-tree {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid var(--border);
+            text-align: center;
+        }
+        .family-tree ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .family-tree ul li {
+            background: var(--bg);
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            font-weight: 700;
+            font-size: 16px;
+            transition: all var(--transition);
+            font-family: 'DIST Inking', cursive;
+        }
+        .family-tree ul li:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
         }
         @media (max-width: 768px) {
             .bio-grid {
@@ -42,18 +79,18 @@
         <div class="container header-inner">
             <div class="logo">
                 <img src="zoro-skull.png" alt="Герб Зоро" class="logo-skull">
-                <span class="anim-fade">Z<span class="green">O</span>RO</span>
+                <span class="anim-fade hover-scale">Z<span class="green">O</span>RO</span>
             </div>
             <nav class="nav">
-                <a href="index.html" class="anim-fade">Главная</a>
-                <a href="bio.html" class="anim-fade">Биография</a>
-                <a href="swords.html" class="anim-fade">Мечи</a>
-                <a href="enemies.html" class="anim-fade">Враги</a>
-                <a href="crew-relations.html" class="anim-fade">Команда</a>
-                <a href="fan.html" class="anim-fade">Фан-зона</a>
-                <a href="awards.html" class="anim-fade">Награды</a>
+                <a href="index.html" class="anim-fade hover-spacing">Главная</a>
+                <a href="bio.html" class="anim-fade hover-spacing">Биография</a>
+                <a href="swords.html" class="anim-fade hover-spacing">Мечи</a>
+                <a href="enemies.html" class="anim-fade hover-spacing">Враги</a>
+                <a href="crew-relations.html" class="anim-fade hover-spacing">Команда</a>
+                <a href="fan.html" class="anim-fade hover-spacing">Фан-зона</a>
+                <a href="awards.html" class="anim-fade hover-spacing">Награды</a>
                 <div class="lang-dropdown">
-                    <button class="lang-toggle anim-fade">🌐 RU</button>
+                    <button class="lang-toggle anim-fade hover-glow">🌐 RU</button>
                     <div class="lang-menu">
                         <button data-lang="ru" class="active-lang">🇷🇺 Русский</button>
                         <button data-lang="en">🇬🇧 English</button>
@@ -62,43 +99,43 @@
                         <button data-lang="zh">🇨🇳 中文</button>
                     </div>
                 </div>
-                <button class="theme-btn anim-fade" data-theme="mixed">🌓</button>
-                <button class="theme-btn anim-fade" data-theme="light">☀️</button>
-                <button class="theme-btn anim-fade" data-theme="dark">🌙</button>
-                <button class="auth-btn anim-fade">🔑 Войти</button>
+                <button class="theme-btn anim-fade hover-glow" data-theme="mixed">🌓</button>
+                <button class="theme-btn anim-fade hover-glow" data-theme="light">☀️</button>
+                <button class="theme-btn anim-fade hover-glow" data-theme="dark">🌙</button>
+                <button class="auth-btn anim-fade hover-glow">🔑 Войти</button>
             </nav>
         </div>
     </header>
 
     <section class="bio">
         <div class="container">
-            <h2 class="anim-glitch">⚔️ Биография <span class="gold">Ророноа Зоро</span></h2>
-            <p class="section-subtitle anim-fade">Путь от охотника на пиратов до вице-капитана Мугивар — полная история жизни</p>
+            <h2 class="anim-glitch hover-scale" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 40px; text-transform: uppercase; text-align: center; color: var(--gold);">⚔️ Биография <span class="gold hover-glow">Ророноа Зоро</span></h2>
+            <p class="section-subtitle anim-fade hover-shadow">Путь от охотника на пиратов до вице-капитана Мугивар — полная история жизни</p>
 
             <div class="bio-grid">
                 <div class="bio-text">
-                    <p class="anim-fade"><strong>Ророноа Зоро</strong> — мечник-виртуоз, вице-капитан команды Соломенной Шляпы, охотник на пиратов. Родился в деревне Шимотсуки, где с детства тренировался в додзё под руководством отца Куины. Его цель — стать величайшим фехтовальщиком в мире, и он идёт к ней через кровь, пот и сталь. С раннего возраста он проявлял невероятную силу духа и упорство, которые в будущем сделали его одним из самых опасных людей в мире.</p>
+                    <p class="anim-fade hover-float"><strong>Ророноа Зоро</strong> — мечник-виртуоз, вице-капитан команды Соломенной Шляпы, охотник на пиратов. Родился в деревне Шимотсуки, где с детства тренировался в додзё под руководством отца Куины. Его цель — стать величайшим фехтовальщиком в мире, и он идёт к ней через кровь, пот и сталь.</p>
 
-                    <h3 class="anim-fade">🏯 Детство в Шимотсуки</h3>
-                    <p class="anim-fade">Зоро с ранних лет проявлял невероятную силу и упрямство. Он постоянно проигрывал Куине, но это только закаляло его дух. В додзё он тренировался днём и ночью, мечтая стать сильнейшим. После трагической гибели Куины он дал клятву стать величайшим фехтовальщиком в мире и получил её меч — Вадо Ичимонидзи. Эта клятва стала смыслом его жизни. Он поклялся, что его имя прогремит на весь мир, и что он не остановится, пока не победит Михоука. Его упорство и трудолюбие поражали даже опытных самураев — он не знал отдыха, потому что знал: мир полон сильных врагов, и он должен быть готов к ним. Каждый день он проводил часы, доводя свои навыки до совершенства, и его техника росла с каждым днём.</p>
+                    <h3 class="anim-fade hover-tilt">🏯 Детство в Шимотсуки</h3>
+                    <p class="anim-fade hover-float">Зоро с ранних лет проявлял невероятную силу и упрямство. Он постоянно проигрывал Куине, но это только закаляло его дух. В додзё он тренировался днём и ночью, мечтая стать сильнейшим. После трагической гибели Куины он дал клятву стать величайшим фехтовальщиком в мире и получил её меч — Вадо Ичимонидзи.</p>
 
-                    <h3 class="anim-fade">⚔️ Охотник на пиратов</h3>
-                    <p class="anim-fade">До встречи с Луффи Зоро был известен как «Охотник на пиратов» — он выслеживал преступников, чтобы заработать на жизнь. Его репутация росла, и о нём заговорили в Восточном Блю. Он не убивал своих жертв, а сдавал их властям, чтобы получить награду. Его имя наводило ужас на пиратов, а его принципы были твёрдыми: он никогда не нападал на слабых и всегда держал слово. За время работы охотником он победил десятки пиратов, заработав репутацию непобедимого мечника. Его методы были жёсткими, но справедливыми — он не брал награду за убийство, только за поимку. Это делало его уникальным в глазах властей и уважаемым среди простых людей. Он был одиночкой, но его мечта была больше, чем просто выживание — он хотел доказать миру, что достоин быть сильнейшим.</p>
+                    <h3 class="anim-fade hover-tilt">⚔️ Охотник на пиратов</h3>
+                    <p class="anim-fade hover-float">До встречи с Луффи Зоро был известен как «Охотник на пиратов» — он выслеживал преступников, чтобы заработать на жизнь. Его репутация росла, и о нём заговорили в Восточном Блю. Он не убивал своих жертв, а сдавал их властям, чтобы получить награду.</p>
 
-                    <h3 class="anim-fade">⛓️ Встреча с Луффи</h3>
-                    <p class="anim-fade">В Шеллс-Тауне Зоро был прикован к столбу пиратами Моргана. Он согласился на казнь, но только ради того, чтобы спасти девочку Рику. Луффи, увидев его решимость, освободил его и предложил стать пиратом. Зоро согласился, но поставил условие: он станет величайшим фехтовальщиком в мире и не проиграет ни одному мечнику до встречи с Михоуком. Это был поворотный момент в его жизни — он нашёл не просто капитана, а семью. С того дня он стал частью команды, которая изменила его жизнь. Луффи дал ему свободу и цель, а Зоро ответил верностью и силой. Их союз стал легендарным, а их дружба — одной из самых крепких в истории пиратов.</p>
+                    <h3 class="anim-fade hover-tilt">⛓️ Встреча с Луффи</h3>
+                    <p class="anim-fade hover-float">В Шеллс-Тауне Зоро был прикован к столбу пиратами Моргана. Он согласился на казнь, но только ради того, чтобы спасти девочку Рику. Луффи, увидев его решимость, освободил его и предложил стать пиратом. Зоро согласился, но поставил условие: он станет величайшим фехтовальщиком в мире.</p>
 
-                    <h3 class="anim-fade">🌊 Путь с Мугиварами</h3>
-                    <p class="anim-fade">Зоро прошёл все арки вместе с командой: от Алабасты до Вано. Он всегда был вице-капитаном, защищая друзей и следуя своей мечте. Его сила росла с каждой битвой. В Алабасте он научился рубить сталь, победив Мистера 1. В Эниес Лобби он раскрыл Асуру. На Триллер Барке он сразился с Рюмой и получил Шюсуй. В Вано он получил Энму и победил Кинга, подтвердив свою силу. Каждая битва делала его сильнее, а его воля становилась несокрушимой. Он никогда не отступал, даже когда враг превосходил его в силе. Его победы вдохновляли команду, а его стойкость стала примером для всех Мугивар. Он был тем, кто держал строй, когда всё шло не по плану, и тем, кто брал на себя самые тяжёлые удары.</p>
+                    <h3 class="anim-fade hover-tilt">🌊 Путь с Мугиварами</h3>
+                    <p class="anim-fade hover-float">Зоро прошёл все арки вместе с командой: от Алабасты до Вано. Он всегда был вице-капитаном, защищая друзей и следуя своей мечте. Его сила росла с каждой битвой. В Алабасте он научился рубить сталь, победив Мистера 1. В Эниес Лобби он раскрыл Асуру. На Триллер Барке он сразился с Рюмой и получил Шюсуй. В Вано он получил Энму и победил Кинга.</p>
 
-                    <h3 class="anim-fade">⚡ Вано и раскрытие родословной</h3>
-                    <p class="anim-fade">В арке Вано раскрылась связь Зоро с легендарным самураем Рюмой. Ода намекнул, что Зоро может быть потомком Рюмы. Он получил меч Энма и победил Кинга, подтвердив свою силу. Зоро нанёс удар Кайдо, оставив шрам на его теле, и стал известен как «Король Ада». Вано стало местом, где Зоро доказал, что он — один из сильнейших мечников в истории. Энма, меч, который высасывает Хаки, стал его главным оружием. Он овладел им, показав, что его воля сильнее любого проклятия. Это был его шаг к величию, к битве, которая определит его судьбу.</p>
+                    <h3 class="anim-fade hover-tilt">⚡ Вано и раскрытие родословной</h3>
+                    <p class="anim-fade hover-float">В арке Вано раскрылась связь Зоро с легендарным самураем Рюмой. Ода намекнул, что Зоро может быть потомком Рюмы. Он получил меч Энма и победил Кинга, подтвердив свою силу. Зоро нанёс удар Кайдо, оставив шрам на его теле, и стал известен как «Король Ада».</p>
 
-                    <h3 class="anim-fade">🗡️ Главная цель</h3>
-                    <p class="anim-fade">Зоро продолжает идти к своей цели — стать величайшим фехтовальщиком в мире и победить Дракула Михоука. Его воля несокрушима, а верность команде безгранична. Он готов отдать жизнь за своих товарищей, но никогда не откажется от своей мечты. Его путь — это бесконечное восхождение к вершине, где его ждёт битва, определяющая судьбу мира. Он знает, что цель близка, но не торопится. Каждый день — это шаг к совершенству. Каждая битва — это урок. Он готов ждать, но не сдаваться. Его цель — не просто победа, а признание того, что он достоин быть величайшим.</p>
+                    <h3 class="anim-fade hover-tilt">🗡️ Главная цель</h3>
+                    <p class="anim-fade hover-float">Зоро продолжает идти к своей цели — стать величайшим фехтовальщиком в мире и победить Дракула Михоука. Его воля несокрушима, а верность команде безгранична. Он готов отдать жизнь за своих товарищей, но никогда не откажется от своей мечты.</p>
 
-                    <h3 class="anim-fade">📖 Цитаты из манги и SBS</h3>
-                    <p class="anim-fade">Эйчиро Ода в SBS не раз подчёркивал, что Зоро — самый надёжный член команды. Его сила и преданность делают его идеальным вице-капитаном. Ода сказал: «Зоро — это тот, кто всегда держит слово и никогда не отступает. Он — опора Мугивар». Также Ода отметил, что Зоро — единственный персонаж, который способен заставить Луффи слушаться. Его авторитет в команде непоколебим. В одном из интервью Ода добавил: «Зоро — это персонаж, который воплощает идею силы духа. Его путь — это путь воина, который не знает страха». Эти слова подтверждают, что Зоро — один из самых важных персонажей в истории One Piece.</p>
+                    <h3 class="anim-fade hover-tilt">📖 Цитаты из манги и SBS</h3>
+                    <p class="anim-fade hover-float">Эйчиро Ода в SBS не раз подчёркивал, что Зоро — самый надёжный член команды. Его сила и преданность делают его идеальным вице-капитаном. Ода сказал: «Зоро — это тот, кто всегда держит слово и никогда не отступает. Он — опора Мугивар».</p>
                 </div>
 
                 <div>
@@ -106,20 +143,19 @@
                 </div>
             </div>
 
-            <!-- РОДОВОЕ ДРЕВО -->
             <div class="family-tree-section">
-                <h2 class="anim-glitch">🌳 Родовое древо <span class="gold">Зоро</span></h2>
+                <h2 class="anim-glitch hover-scale">🌳 Родовое древо <span class="gold hover-glow">Зоро</span></h2>
                 <div class="family-tree">
                     <div class="image-frame">
-                        <img src="ryuma-family.png" alt="Рюма — предок Зоро" class="tree-image">
+                        <img src="ryuma-family.png" alt="Рюма — предок Зоро" class="tree-image" style="max-width: 100%; border-radius: 16px;">
                     </div>
                     <ul>
-                        <li class="anim-fade"><span class="gold">Рюма</span> — легендарный самурай, предок</li>
-                        <li class="anim-fade"><span class="green">Отец</span> — неизвестен, самурай из Вано</li>
-                        <li class="anim-fade"><span class="green">Мать</span> — неизвестна</li>
-                        <li class="anim-fade"><span class="purple">Куина</span> — духовная сестра</li>
+                        <li class="anim-fade hover-scale"><span class="gold hover-glow">Рюма</span> — легендарный самурай, предок</li>
+                        <li class="anim-fade hover-scale"><span class="green hover-glow">Отец</span> — неизвестен, самурай из Вано</li>
+                        <li class="anim-fade hover-scale"><span class="green hover-glow">Мать</span> — неизвестна</li>
+                        <li class="anim-fade hover-scale"><span class="purple hover-glow">Куина</span> — духовная сестра</li>
                     </ul>
-                    <p class="anim-fade" style="margin-top: 20px; color: var(--text-dark);">Связь Зоро с Рюмой была подтверждена в манге. Его отец и мать остаются тайной, которая, возможно, будет раскрыта в будущем.</p>
+                    <p class="anim-fade hover-float" style="margin-top: 20px; color: var(--text-dark);">Связь Зоро с Рюмой была подтверждена в манге. Его отец и мать остаются тайной, которая, возможно, будет раскрыта в будущем.</p>
                 </div>
             </div>
         </div>
@@ -128,10 +164,10 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-links">
-                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-fade">Смотреть аниме</a>
-                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade">Вики Зоро</a>
-                <a href="https://anime-characters-fight.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade">Фандом</a>
-                <a href="https://ru.pinterest.com/rebynok05/roronoa-zoro/" target="_blank" class="footer-btn anim-fade">Pinterest</a>
+                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-fade hover-glow">Смотреть аниме</a>
+                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade hover-glow">Вики Зоро</a>
+                <a href="https://anime-characters-fight.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade hover-glow">Фандом</a>
+                <a href="https://ru.pinterest.com/rebynok05/roronoa-zoro/" target="_blank" class="footer-btn anim-fade hover-glow">Pinterest</a>
             </div>
             <div class="footer-copy anim-fade">
                 <p>Создано фанатом для фанатов. Вся информация проверена по манге и SBS.</p>
