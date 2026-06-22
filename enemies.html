@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Все противники Зоро</title>
     <link rel="icon" href="zoro-skull.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIST+Inking&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         .enemies-container {
@@ -57,7 +57,7 @@
             padding: 8px;
         }
         .enemy-card h4 {
-            font-family: 'Russo One', sans-serif;
+            font-family: 'DIST Inking', 'Russo One', cursive;
             font-size: 20px;
         }
         .enemy-card .result {
@@ -93,18 +93,18 @@
         <div class="container header-inner">
             <div class="logo">
                 <img src="zoro-skull.png" alt="Герб Зоро" class="logo-skull">
-                <span class="anim-fade">Z<span class="green">O</span>RO</span>
+                <span class="anim-fade hover-scale">Z<span class="green">O</span>RO</span>
             </div>
             <nav class="nav">
-                <a href="index.html" class="anim-fade">Главная</a>
-                <a href="bio.html" class="anim-fade">Биография</a>
-                <a href="swords.html" class="anim-fade">Мечи</a>
-                <a href="enemies.html" class="anim-fade">Враги</a>
-                <a href="crew-relations.html" class="anim-fade">Команда</a>
-                <a href="fan.html" class="anim-fade">Фан-зона</a>
-                <a href="awards.html" class="anim-fade">Награды</a>
+                <a href="index.html" class="anim-fade hover-spacing">Главная</a>
+                <a href="bio.html" class="anim-fade hover-spacing">Биография</a>
+                <a href="swords.html" class="anim-fade hover-spacing">Мечи</a>
+                <a href="enemies.html" class="anim-fade hover-spacing">Враги</a>
+                <a href="crew-relations.html" class="anim-fade hover-spacing">Команда</a>
+                <a href="fan.html" class="anim-fade hover-spacing">Фан-зона</a>
+                <a href="awards.html" class="anim-fade hover-spacing">Награды</a>
                 <div class="lang-dropdown">
-                    <button class="lang-toggle anim-fade">🌐 RU</button>
+                    <button class="lang-toggle anim-fade hover-glow">🌐 RU</button>
                     <div class="lang-menu">
                         <button data-lang="ru" class="active-lang">🇷🇺 Русский</button>
                         <button data-lang="en">🇬🇧 English</button>
@@ -113,155 +113,38 @@
                         <button data-lang="zh">🇨🇳 中文</button>
                     </div>
                 </div>
-                <button class="theme-btn anim-fade" data-theme="mixed">🌓</button>
-                <button class="theme-btn anim-fade" data-theme="light">☀️</button>
-                <button class="theme-btn anim-fade" data-theme="dark">🌙</button>
-                <button class="auth-btn anim-fade">🔑 Войти</button>
+                <button class="theme-btn anim-fade hover-glow" data-theme="mixed">🌓</button>
+                <button class="theme-btn anim-fade hover-glow" data-theme="light">☀️</button>
+                <button class="theme-btn anim-fade hover-glow" data-theme="dark">🌙</button>
+                <button class="auth-btn anim-fade hover-glow">🔑 Войти</button>
             </nav>
         </div>
     </header>
 
     <section class="enemies">
         <div class="container">
-            <h2 class="anim-glitch">⚔️ Все противники <span class="gold">Зоро</span></h2>
-            <p class="section-subtitle anim-fade">От первых врагов до легендарных императоров — полный список побед и поражений</p>
+            <h2 class="anim-glitch hover-scale" style="font-family: 'DIST Inking', 'Russo One', cursive; font-size: 40px; text-transform: uppercase; text-align: center; color: var(--gold);">⚔️ Все противники <span class="gold hover-glow">Зоро</span></h2>
+            <p class="section-subtitle anim-fade hover-shadow">От первых врагов до легендарных императоров — полный список побед и поражений</p>
 
             <div class="enemies-container">
                 <div class="enemies-track">
-                    <!-- 1. Михоук -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="mihawk.png" alt="Михоук"></div>
-                        <h4>Дракул Михоук</h4>
-                        <p>Величайший фехтовальщик</p>
-                        <p class="result lose">Поражение</p>
-                        <div class="info">Первая встреча у Баратье. Михоук сломал два меча Зоро, но оставил его в живых, сказав: «Познай себя — и стань сильнее».</div>
-                    </div>
-                    <!-- 2. Кайдо -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="kaido.png" alt="Кайдо"></div>
-                        <h4>Кайдо</h4>
-                        <p>Император, сильнейший зверь</p>
-                        <p class="result draw">Ранил</p>
-                        <div class="info">Битва на крыше в Вано. Зоро нанёс Кайдо глубокую рану, оставив шрам, который заставил императора уважать его.</div>
-                    </div>
-                    <!-- 3. Кинг -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="king-enemy.png" alt="Кинг"></div>
-                        <h4>Кинг</h4>
-                        <p>Правая рука Кайдо</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Эпическая битва в Вано. Зоро использовал Энму и Асуру, чтобы победить Кинга, доказав, что достоин звания «Король Ада».</div>
-                    </div>
-                    <!-- 4. Мистер 1 -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="mr1.png" alt="Мистер 1"></div>
-                        <h4>Мистер 1</h4>
-                        <p>Агент Барок Воркс</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Алабаста. Первый серьёзный бой Зоро, где он научился рубить сталь, сказав: «Всё, что я хочу — стать сильнее».</div>
-                    </div>
-                    <!-- 5. Каку -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="kaku.png" alt="Каку"></div>
-                        <h4>Каку</h4>
-                        <p>CP9, жираф</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Эниес Лобби. Зоро раскрыл Асуру — демоническую форму с 9 мечами, которая сломала защиту Каку.</div>
-                    </div>
-                    <!-- 6. Рюма -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="ryuma.png" alt="Рюма"></div>
-                        <h4>Рюма</h4>
-                        <p>Легендарный самурай (зомби)</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Триллер Барк. Зоро сразился с легендой и победил, получив благословение Шюсуй. Это предвещало его связь с Вано.</div>
-                    </div>
-                    <!-- 7. Моне -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="mone.png" alt="Моне"></div>
-                        <h4>Моне</h4>
-                        <p>Подчинённая Цезаря</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Панк Хазард. Зоро разрезал её пополам, но не убил — это было его новое мастерство контроля силы.</div>
-                    </div>
-                    <!-- 8. Хачи -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="hachi.png" alt="Хачи"></div>
-                        <h4>Хачи</h4>
-                        <p>Рыбо-человек (осьминог)</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Арлонг-парк. Зоро легко разобрался с ним, даже будучи раненым, показав свою несокрушимую волю.</div>
-                    </div>
-                    <!-- 9. Морган -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="morgan.png" alt="Морган"></div>
-                        <h4>Капитан Морган</h4>
-                        <p>Морской пехотинец</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Шеллс-Таун. Зоро победил Моргана ударом головы — легендарный момент, который показал его характер.</div>
-                    </div>
-                    <!-- 10. Альвида -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="alvida.png" alt="Альвида"></div>
-                        <h4>Альвида</h4>
-                        <p>Пиратка Восточного Блю</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Первая битва Зоро с Луффи. Он легко победил её, даже не напрягаясь.</div>
-                    </div>
-                    <!-- 11. Кабаджи -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="kabaji.png" alt="Кабаджи"></div>
-                        <h4>Кабаджи</h4>
-                        <p>Пират из команды Бартоломео</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Зоро вырубил его одним ударом, защищая Усоппа.</div>
-                    </div>
-                    <!-- 12. Гин -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="gin.png" alt="Гин"></div>
-                        <h4>Гин</h4>
-                        <p>Пират из команды Крига</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Зоро сразился с ним в Баратье, показав свою силу и решимость.</div>
-                    </div>
-                    <!-- 13. Дон Криг -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="don-krieg.png" alt="Дон Криг"></div>
-                        <h4>Дон Криг</h4>
-                        <p>Лидер пиратов Восточного Блю</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Зоро помог Луффи победить Крига, показав свою преданность команде.</div>
-                    </div>
-                    <!-- 14. Бартоломео -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="bartolomeo.png" alt="Бартоломео"></div>
-                        <h4>Бартоломео</h4>
-                        <p>Капитан пиратов Бартоломео</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Зоро не сражался серьёзно, но показал свою силу, заставив Бартоломео уважать его.</div>
-                    </div>
-                    <!-- Дубликаты для конвейера -->
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="mihawk.png" alt="Михоук"></div>
-                        <h4>Дракул Михоук</h4>
-                        <p>Величайший фехтовальщик</p>
-                        <p class="result lose">Поражение</p>
-                        <div class="info">Первая встреча у Баратье.</div>
-                    </div>
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="kaido.png" alt="Кайдо"></div>
-                        <h4>Кайдо</h4>
-                        <p>Император</p>
-                        <p class="result draw">Ранил</p>
-                        <div class="info">Битва на крыше в Вано.</div>
-                    </div>
-                    <div class="enemy-card anim-fade">
-                        <div class="image-frame"><img src="king-enemy.png" alt="Кинг"></div>
-                        <h4>Кинг</h4>
-                        <p>Правая рука Кайдо</p>
-                        <p class="result win">Победа</p>
-                        <div class="info">Эпическая битва в Вано.</div>
-                    </div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="mihawk.png" alt="Михоук"></div><h4 class="hover-scale">Дракул Михоук</h4><p>Величайший фехтовальщик</p><p class="result lose">Поражение</p><div class="info">Первая встреча у Баратье. Михоук сломал два меча Зоро, но оставил его в живых, сказав: «Познай себя — и стань сильнее».</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="kaido.png" alt="Кайдо"></div><h4 class="hover-scale">Кайдо</h4><p>Император, сильнейший зверь</p><p class="result draw">Ранил</p><div class="info">Битва на крыше в Вано. Зоро нанёс Кайдо глубокую рану, оставив шрам, который заставил императора уважать его.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="king-enemy.png" alt="Кинг"></div><h4 class="hover-scale">Кинг</h4><p>Правая рука Кайдо</p><p class="result win">Победа</p><div class="info">Эпическая битва в Вано. Зоро использовал Энму и Асуру, чтобы победить Кинга, доказав, что достоин звания «Король Ада».</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="mr1.png" alt="Мистер 1"></div><h4 class="hover-scale">Мистер 1</h4><p>Агент Барок Воркс</p><p class="result win">Победа</p><div class="info">Алабаста. Первый серьёзный бой Зоро, где он научился рубить сталь.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="kaku.png" alt="Каку"></div><h4 class="hover-scale">Каку</h4><p>CP9, жираф</p><p class="result win">Победа</p><div class="info">Эниес Лобби. Зоро раскрыл Асуру — демоническую форму с 9 мечами.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="ryuma.png" alt="Рюма"></div><h4 class="hover-scale">Рюма</h4><p>Легендарный самурай (зомби)</p><p class="result win">Победа</p><div class="info">Триллер Барк. Зоро сразился с легендой и победил, получив благословение Шюсуй.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="mone.png" alt="Моне"></div><h4 class="hover-scale">Моне</h4><p>Подчинённая Цезаря</p><p class="result win">Победа</p><div class="info">Панк Хазард. Зоро разрезал её пополам, но не убил — это было его новое мастерство контроля силы.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="hachi.png" alt="Хачи"></div><h4 class="hover-scale">Хачи</h4><p>Рыбо-человек (осьминог)</p><p class="result win">Победа</p><div class="info">Арлонг-парк. Зоро легко разобрался с ним, даже будучи раненым.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="morgan.png" alt="Морган"></div><h4 class="hover-scale">Капитан Морган</h4><p>Морской пехотинец</p><p class="result win">Победа</p><div class="info">Шеллс-Таун. Зоро победил Моргана ударом головы — легендарный момент.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="alvida.png" alt="Альвида"></div><h4 class="hover-scale">Альвида</h4><p>Пиратка Восточного Блю</p><p class="result win">Победа</p><div class="info">Первая битва Зоро с Луффи. Он легко победил её, даже не напрягаясь.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="kabaji.png" alt="Кабаджи"></div><h4 class="hover-scale">Кабаджи</h4><p>Пират из команды Бартоломео</p><p class="result win">Победа</p><div class="info">Зоро вырубил его одним ударом, защищая Усоппа.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="gin.png" alt="Гин"></div><h4 class="hover-scale">Гин</h4><p>Пират из команды Крига</p><p class="result win">Победа</p><div class="info">Зоро сразился с ним в Баратье, показав свою силу и решимость.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="don-krieg.png" alt="Дон Криг"></div><h4 class="hover-scale">Дон Криг</h4><p>Лидер пиратов Восточного Блю</p><p class="result win">Победа</p><div class="info">Зоро помог Луффи победить Крига, показав свою преданность команде.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="bartolomeo.png" alt="Бартоломео"></div><h4 class="hover-scale">Бартоломео</h4><p>Капитан пиратов Бартоломео</p><p class="result win">Победа</p><div class="info">Зоро не сражался серьёзно, но показал свою силу, заставив Бартоломео уважать его.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="mihawk.png" alt="Михоук"></div><h4 class="hover-scale">Дракул Михоук</h4><p>Величайший фехтовальщик</p><p class="result lose">Поражение</p><div class="info">Первая встреча у Баратье.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="kaido.png" alt="Кайдо"></div><h4 class="hover-scale">Кайдо</h4><p>Император</p><p class="result draw">Ранил</p><div class="info">Битва на крыше в Вано.</div></div>
+                    <div class="enemy-card anim-fade hover-float"><div class="image-frame"><img src="king-enemy.png" alt="Кинг"></div><h4 class="hover-scale">Кинг</h4><p>Правая рука Кайдо</p><p class="result win">Победа</p><div class="info">Эпическая битва в Вано.</div></div>
                 </div>
             </div>
         </div>
@@ -270,10 +153,10 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-links">
-                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-fade">Смотреть аниме</a>
-                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade">Вики Зоро</a>
-                <a href="https://anime-characters-fight.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade">Фандом</a>
-                <a href="https://ru.pinterest.com/rebynok05/roronoa-zoro/" target="_blank" class="footer-btn anim-fade">Pinterest</a>
+                <a href="https://onepiecedl.com/" target="_blank" class="footer-btn anim-fade hover-glow">Смотреть аниме</a>
+                <a href="https://onepiece.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade hover-glow">Вики Зоро</a>
+                <a href="https://anime-characters-fight.fandom.com/ru/wiki/%D0%A0%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%B0_%D0%97%D0%BE%D1%80%D0%BE" target="_blank" class="footer-btn anim-fade hover-glow">Фандом</a>
+                <a href="https://ru.pinterest.com/rebynok05/roronoa-zoro/" target="_blank" class="footer-btn anim-fade hover-glow">Pinterest</a>
             </div>
             <div class="footer-copy anim-fade">
                 <p>Создано фанатом для фанатов. Вся информация проверена по манге и SBS.</p>
